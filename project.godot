@@ -21,6 +21,13 @@ Music="*res://scenes/music.tscn"
 Protocol="*res://scripts/base/protocol.gd"
 Network="*res://scripts/base/network.gd"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [input]
 
 jump={
