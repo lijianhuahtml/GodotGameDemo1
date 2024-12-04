@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/music.tscn"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/resizable=false
+window/stretch/mode="viewport"
+
 [input]
 
 jump={
