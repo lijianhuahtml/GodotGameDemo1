@@ -11,11 +11,6 @@ const JUMP_VELOCITY = -300.0
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
 
-#func _ready():
-	#var window_size = DisplayServer.window_get_size()
-	#camera.zoom = Vector2(1920.0 / window_size.x, 1080.0 / window_size.y)
-
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

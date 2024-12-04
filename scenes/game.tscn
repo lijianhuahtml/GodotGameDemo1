@@ -1,13 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://carcldasjlx5t"]
+[gd_scene load_steps=17 format=4 uid="uid://carcldasjlx5t"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_4qfbc"]
 [ext_resource type="PackedScene" uid="uid://b855cv72kbxk7" path="res://scenes/player.tscn" id="1_dq6lr"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_y2s3t"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_ahbau"]
 [ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://scenes/plastform.tscn" id="3_6qnu8"]
 [ext_resource type="PackedScene" uid="uid://cf1t278ix2w0c" path="res://scenes/coin.tscn" id="4_rkn20"]
 [ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://scenes/killzone.tscn" id="5_e8me7"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="5_hmodf"]
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://scenes/slime.tscn" id="6_3ji67"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_gyfuh"]
 
@@ -358,7 +356,6 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_4qfbc")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -389,7 +386,6 @@ position = Vector2(-2, 0)
 zoom = Vector2(3, 3)
 limit_bottom = 120
 position_smoothing_enabled = true
-script = ExtResource("5_hmodf")
 
 [node name="Killzone" parent="." instance=ExtResource("5_e8me7")]
 position = Vector2(56, 122)
