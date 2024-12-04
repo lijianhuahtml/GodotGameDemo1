@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Music="*res://scenes/music.tscn"
+Protocol="*res://scripts/base/protocol.gd"
+Network="*res://scripts/base/network.gd"
 
 [display]
 
