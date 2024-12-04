@@ -382,9 +382,8 @@ tile_set = SubResource("TileSet_jyd27")
 position = Vector2(17, 19)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-2, 0)
-zoom = Vector2(4, 4)
-limit_bottom = 120
+zoom = Vector2(2, 2)
+limit_bottom = 150
 position_smoothing_enabled = true
 
 [node name="Killzone" parent="." instance=ExtResource("5_e8me7")]
