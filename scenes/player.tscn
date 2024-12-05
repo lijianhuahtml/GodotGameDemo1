@@ -1,7 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b855cv72kbxk7"]
+[gd_scene load_steps=29 format=3 uid="uid://b855cv72kbxk7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ft6se"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/knight.png" id="1_p15u6"]
+[ext_resource type="Script" path="res://scripts/skill/skill.gd" id="3_n60c3"]
+[ext_resource type="Script" path="res://scripts/skill/skill_dash_data.gd" id="4_t5ib6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkbdm"]
 atlas = ExtResource("1_p15u6")
@@ -171,10 +173,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oa1ch"]
 radius = 5.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="Resource" id="Resource_t5w2l"]
+script = ExtResource("4_t5ib6")
+speed = 1000.0
+dash_time = 0.1
+id = 0
+name = "冲刺"
+cooldown = 1
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("skill")]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_ft6se")
+skill = NodePath("Skill")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -186,3 +197,10 @@ frame_progress = 0.627687
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_oa1ch")
+
+[node name="Skill" type="Node" parent="." node_paths=PackedStringArray("unit")]
+script = ExtResource("3_n60c3")
+unit = NodePath("..")
+skills = {
+0: SubResource("Resource_t5w2l")
+}
