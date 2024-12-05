@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://carcldasjlx5t"]
+[gd_scene load_steps=19 format=4 uid="uid://bfrkia5we5hlg"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_4qfbc"]
 [ext_resource type="PackedScene" uid="uid://b855cv72kbxk7" path="res://scenes/player.tscn" id="1_dq6lr"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_y2s3t"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="2_ahbau"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://scenes/killzone.tscn" id="5_e8me7"]
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://scenes/slime.tscn" id="6_3ji67"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="7_gyfuh"]
+[ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://scenes/boss.tscn" id="9_4aqv4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_keacc"]
 texture = ExtResource("2_ahbau")
@@ -356,6 +358,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_4qfbc")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -504,16 +507,6 @@ theme_override_fonts/font = ExtResource("7_gyfuh")
 theme_override_font_sizes/font_size = 8
 text = "You'll die if you meet slime"
 
-[node name="Boss" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
+[node name="Boss" parent="." instance=ExtResource("9_4aqv4")]
 z_index = 1
-position = Vector2(1232, 64)
-script = null
+position = Vector2(1200, 64)
