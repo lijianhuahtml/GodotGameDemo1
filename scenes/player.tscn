@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://b855cv72kbxk7"]
+[gd_scene load_steps=31 format=3 uid="uid://b855cv72kbxk7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ft6se"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/knight.png" id="1_p15u6"]
 [ext_resource type="Script" path="res://scripts/skill/skill.gd" id="3_n60c3"]
 [ext_resource type="Script" path="res://scripts/skill/skill_dash_data.gd" id="4_t5ib6"]
+[ext_resource type="PackedScene" uid="uid://6awjq31mn5j7" path="res://scenes/weapon.tscn" id="5_g7siw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j27c"]
 atlas = ExtResource("1_p15u6")
@@ -215,3 +216,7 @@ unit = NodePath("..")
 skills = {
 0: SubResource("Resource_t5w2l")
 }
+
+[node name="Weapon" parent="." instance=ExtResource("5_g7siw")]
+position = Vector2(0, -7)
+rotation = 0.00363755

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://6awjq31mn5j7"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_18fto"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8bksu"]
+radius = 64.0
+
+[node name="Weapon" type="Area2D"]
+script = ExtResource("1_18fto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -0.00714956
+shape = SubResource("CircleShape2D_8bksu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="ShootingPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -4.76837e-07)
+rotation = 0.0174062
+scale = Vector2(0.331058, 0.331058)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

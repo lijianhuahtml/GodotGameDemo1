@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://coj8iik7rfwyg"]
+[gd_scene load_steps=63 format=3 uid="uid://coj8iik7rfwyg"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_ae1sx"]
 [ext_resource type="Texture2D" uid="uid://h22ph7eacvav" path="res://assets/sprites/Boss.png" id="1_p1a1y"]
@@ -446,9 +446,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20iq8"]
 size = Vector2(36, 44)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr5w3"]
-size = Vector2(62, 59)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vosgx"]
 bg_color = Color(0.415686, 0.415686, 0.415686, 1)
 corner_radius_top_left = 8
@@ -478,13 +475,6 @@ frame_progress = 0.690844
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_20iq8")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(44, -35)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-31, 5.5)
-shape = SubResource("RectangleShape2D_pr5w3")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -17.0
