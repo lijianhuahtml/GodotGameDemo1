@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 300 # 子弹飞行速度
+const SPEED = 200 # 子弹飞行速度
 const RANGE = 400 # 子弹最大飞行距离
 
 var travelled_distance = 0 # 记录子弹飞行距离

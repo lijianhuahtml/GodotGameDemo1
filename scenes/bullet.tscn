@@ -79,13 +79,16 @@ radius = 8.0
 
 [node name="Bullet" type="Area2D"]
 top_level = true
+light_mask = 3
+visibility_layer = 3
 script = ExtResource("1_5h6t2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ir7aj")
 animation = &"send"
-frame_progress = 0.211584
+autoplay = "send"
+frame_progress = 0.0883584
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)

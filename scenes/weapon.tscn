@@ -13,7 +13,7 @@ rotation = -0.00714956
 shape = SubResource("CircleShape2D_8bksu")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 autostart = true
 
 [node name="ShootingPoint" type="Marker2D" parent="."]
