@@ -4,6 +4,7 @@ const SPEED = 200 # 子弹飞行速度
 const RANGE = 400 # 子弹最大飞行距离
 
 var travelled_distance = 0 # 记录子弹飞行距离
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# Vector2.RIGHT: 表示二维向量 (1, 0)，即水平向右。
@@ -20,4 +21,11 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
+	animated_sprite.play("impact")
+	if body.has_method("take_damage"):
+		body.take_damage()
+	animated_sprite.animation_finished.connect(on_animation_finished)
+	
+func on_animation_finished() -> void:
+	# 动画播放完后销毁节点
 	queue_free()

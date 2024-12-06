@@ -13,8 +13,8 @@ func _ready() -> void:
 	# 计算地图的边界（像素单位）
 	var map_left = used.position.x * map_size.x
 	var map_right = used.end.x * map_size.x
-	var map_top = used.position.y * map_size.y
-	var map_bottom = used.end.y * map_size.y
+	#var map_top = used.position.y * map_size.y
+	#var map_bottom = used.end.y * map_size.y
 	
 	# 设置相机限制
 	camera_2d.limit_left = map_left

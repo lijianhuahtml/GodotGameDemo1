@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var progress_bar: ProgressBar = $ProgressBar
 
@@ -14,23 +14,33 @@ func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
 	
 	if direction.x > 0.0:
-		animated_sprite_2d.flip_h = false
+		animated_sprite.flip_h = false
 	else:
-		animated_sprite_2d.flip_h = true
+		animated_sprite.flip_h = true
 		
 	 # 计算目标位置，Boss走到玩家的前面一点
 	var target_position = player.global_position + direction * OFFSET
 	# 计算Boss向目标位置的方向
 	var move_direction = (target_position - global_position).normalized()
 	
-	if player.global_position.x + OFFSET >= global_position.x and player.global_position.x - OFFSET <= global_position.x:
+	if hp <= 0:
+		animated_sprite.play("death")
+		animated_sprite.animation_finished.connect(on_animation_finished)
+	elif player.global_position.x + OFFSET >= global_position.x and player.global_position.x - OFFSET <= global_position.x:
 		velocity *= 0
-		animated_sprite_2d.play("idle")
+		animated_sprite.play("idle")
 	else:
-		animated_sprite_2d.play("move")
+		animated_sprite.play("move")
 		# 设置速度，只在X轴方向上移动
 		velocity = Vector2(move_direction.x, 0) * SPEED
 		
 	progress_bar.value = hp
 	
 	move_and_slide()
+
+func take_damage():
+	hp -= 10
+
+func on_animation_finished() -> void:
+	# 动画播放完后销毁节点
+	queue_free()
