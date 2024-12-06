@@ -7,15 +7,30 @@ const JUMP_VELOCITY = -300.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera: Camera2D = $Camera2D
+@onready var map: TileMapLayer = $"../Map"
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
 
 @export var skill: Skill
 var is_lock_operation := false
 
 var is_jump := false
+var used
+var map_size
+var player_width
 
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
+func _ready() -> void:
+	# 获取地图的使用信息
+	used = map.get_used_rect()
+	# 获取地图的图块大小
+	map_size = map.tile_set.tile_size
+	# 玩家CollisionShape2D宽度
+	player_width = collision_shape.shape.get_rect().size.x
 
+
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if is_lock_operation:
 		return
@@ -32,6 +47,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		is_jump = true
 	
+	# 二段跳的判断逻辑
 	if Input.is_action_just_pressed("jump") and not is_on_floor() and is_jump:
 		velocity.y = JUMP_VELOCITY
 		is_jump = false
@@ -49,7 +65,6 @@ func _physics_process(delta: float) -> void:
 	
 	# 判断是否在地面上
 	if is_on_floor():
-		
 		# 如果没有操作
 		if direction == 0:
 			# 播放闲置动画
@@ -58,14 +73,23 @@ func _physics_process(delta: float) -> void:
 			# 播放奔跑动画
 			animated_sprite.play("run")		
 	# 离开地面
+	elif velocity.y < 0:
+		# 播放跳跃上升动画
+		animated_sprite.play("jump")
 	else:
-		# 播放跳跃动画
-		animated_sprite.play("jump")	
+		# 播放跳跃下降动画
+		animated_sprite.play("fall")	
 
 	if not is_lock_operation:
 		if direction:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			
+	# 计算地图的边界（像素单位）
+	var map_left = used.position.x * map_size.x + player_width / 2
+	var map_right = used.end.x * map_size.x - player_width / 2
+	
+	position.x = clamp(position.x, map_left, map_right)
 
 	move_and_slide()

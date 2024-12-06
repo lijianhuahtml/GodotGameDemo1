@@ -1,9 +1,13 @@
-[gd_scene load_steps=29 format=3 uid="uid://b855cv72kbxk7"]
+[gd_scene load_steps=30 format=3 uid="uid://b855cv72kbxk7"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ft6se"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/knight.png" id="1_p15u6"]
 [ext_resource type="Script" path="res://scripts/skill/skill.gd" id="3_n60c3"]
 [ext_resource type="Script" path="res://scripts/skill/skill_dash_data.gd" id="4_t5ib6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j27c"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(32, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkbdm"]
 atlas = ExtResource("1_p15u6")
@@ -91,6 +95,14 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3laqw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j27c")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nkbdm")
@@ -192,7 +204,6 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_3laqw")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.627687
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)

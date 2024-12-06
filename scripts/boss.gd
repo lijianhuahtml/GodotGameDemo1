@@ -3,7 +3,6 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var progress_bar: ProgressBar = $ProgressBar
-@onready var attackable: Timer = $Attackable
 
 const SPEED = 40 # 行走速度
 const OFFSET = 20  # Boss走到玩家前面一点的距离
@@ -26,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	
 	if player.global_position.x + OFFSET >= global_position.x and player.global_position.x - OFFSET <= global_position.x:
 		velocity *= 0
-		animated_sprite_2d.play("attack1")
+		animated_sprite_2d.play("idle")
 	else:
 		animated_sprite_2d.play("move")
 		# 设置速度，只在X轴方向上移动
