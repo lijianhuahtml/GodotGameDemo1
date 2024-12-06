@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://coj8iik7rfwyg"]
+[gd_scene load_steps=63 format=3 uid="uid://c4wed0qjc6crk"]
 
 [ext_resource type="Script" path="res://scripts/boss.gd" id="1_ae1sx"]
 [ext_resource type="Texture2D" uid="uid://h22ph7eacvav" path="res://assets/sprites/Boss.png" id="1_p1a1y"]
@@ -461,7 +461,9 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="Boss" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 9
+platform_wall_layers = 4095
 script = ExtResource("1_ae1sx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

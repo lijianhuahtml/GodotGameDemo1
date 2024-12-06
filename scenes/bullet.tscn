@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b135d2b1mad2q"]
+[gd_scene load_steps=14 format=3 uid="uid://drdhl7in2m4m4"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_5h6t2"]
 [ext_resource type="Texture2D" uid="uid://dxgcftpqe63va" path="res://assets/sprites/EnergyBall.png" id="1_s1yro"]
@@ -81,6 +81,8 @@ radius = 8.0
 top_level = true
 light_mask = 3
 visibility_layer = 3
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_5h6t2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

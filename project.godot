@@ -54,6 +54,13 @@ dash={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="地面"
+2d_physics/layer_2="玩家"
+2d_physics/layer_3="boss"
+2d_physics/layer_4="子弹"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
