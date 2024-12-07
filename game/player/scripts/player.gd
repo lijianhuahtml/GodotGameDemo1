@@ -24,7 +24,6 @@ var player_width
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
 func _ready() -> void:
-	print("111")
 	# 获取地图的使用信息
 	used = map.get_used_rect()
 	# 获取地图的图块大小

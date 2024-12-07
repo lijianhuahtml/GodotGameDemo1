@@ -45,7 +45,6 @@ func try_execute(executor: Node, type : SkillType):
 		if executor.attr.mp.cur < skill.cost:
 			return
 		executor.attr.mp.cur -= skill.cost
-		print(executor.attr.mp.cur)
 	
 	# 执行技能逻辑
 	execute(executor, skill)
