@@ -3,8 +3,97 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ft6se"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/knight.png" id="1_p15u6"]
 [ext_resource type="Script" path="res://scripts/skill/skill.gd" id="3_n60c3"]
-[ext_resource type="Script" path="res://scripts/skill/skill_dash_data.gd" id="4_t5ib6"]
+[ext_resource type="Script" path="res://scripts/skill/dash/skill_dash_data.gd" id="4_t5ib6"]
 [ext_resource type="PackedScene" uid="uid://6awjq31mn5j7" path="res://scenes/weapon.tscn" id="5_g7siw"]
+[ext_resource type="Script" path="res://scripts/attributes/attributes.gd" id="6_fstoy"]
+[ext_resource type="Script" path="res://scripts/attributes/attributes_float.gd" id="6_l06gb"]
+[ext_resource type="Script" path="res://scripts/attributes/attributes_cons.gd" id="7_kn3bd"]
+[ext_resource type="Script" path="res://scripts/skill/base_skill.gd" id="8_ht30x"]
+
+[sub_resource type="Resource" id="Resource_gpqcf"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_8rh7e"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_kd3kg"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_l4w8v"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_y6yx8"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_6056t"]
+script = ExtResource("7_kn3bd")
+cur = 0.0
+max = 0.0
+
+[sub_resource type="Resource" id="Resource_mqap1"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_ip7ih"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_igcsq"]
+script = ExtResource("7_kn3bd")
+cur = 0.0
+max = 0.0
+
+[sub_resource type="Resource" id="Resource_m4xup"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_3yaaf"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_eh2nx"]
+script = ExtResource("6_l06gb")
+base = 0.0
+add = 0.0
+mul = 0.0
+
+[sub_resource type="Resource" id="Resource_jr4d7"]
+script = ExtResource("6_fstoy")
+hp = SubResource("Resource_6056t")
+mp = SubResource("Resource_igcsq")
+p_atk = SubResource("Resource_m4xup")
+m_atk = SubResource("Resource_mqap1")
+p_def = SubResource("Resource_3yaaf")
+m_def = SubResource("Resource_ip7ih")
+speed = SubResource("Resource_eh2nx")
+crit = SubResource("Resource_gpqcf")
+crit_rate = SubResource("Resource_8rh7e")
+eva = SubResource("Resource_y6yx8")
+dmg_inc = SubResource("Resource_kd3kg")
+dmg_red = SubResource("Resource_l4w8v")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j27c"]
 atlas = ExtResource("1_p15u6")
@@ -186,19 +275,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oa1ch"]
 radius = 5.0
 
-[sub_resource type="Resource" id="Resource_t5w2l"]
+[sub_resource type="Resource" id="Resource_7g7l8"]
 script = ExtResource("4_t5ib6")
 speed = 1000.0
 dash_time = 0.1
-id = 0
+type = 0
 name = "冲刺"
 cooldown = 1
+cost = 0.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("skill")]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_ft6se")
 skill = NodePath("Skill")
+attr = SubResource("Resource_jr4d7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -210,13 +301,10 @@ autoplay = "idle"
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_oa1ch")
 
-[node name="Skill" type="Node" parent="." node_paths=PackedStringArray("unit")]
-script = ExtResource("3_n60c3")
-unit = NodePath("..")
-skills = {
-0: SubResource("Resource_t5w2l")
-}
-
 [node name="Weapon" parent="." instance=ExtResource("5_g7siw")]
 position = Vector2(0, -7)
 rotation = 0.00363755
+
+[node name="Skill" type="Node" parent="."]
+script = ExtResource("3_n60c3")
+skills = Array[ExtResource("8_ht30x")]([SubResource("Resource_7g7l8")])
