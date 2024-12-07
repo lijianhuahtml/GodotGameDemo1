@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://game/enemy/scenes/slime.tscn" id="6_i4cy2"]
 [ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://game/enemy/scenes/boss.tscn" id="7_1khp1"]
 [ext_resource type="Script" path="res://game/enemy/scripts/boss.gd" id="8_l6i38"]
-[ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/level/scenes/killzone.tscn" id="8_x3bow"]
+[ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/map_set/scenes/killzone.tscn" id="8_x3bow"]
 [ext_resource type="PackedScene" uid="uid://cf1t278ix2w0c" path="res://game/item/scenes/coin.tscn" id="9_3ph00"]
-[ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/level/scenes/plastform.tscn" id="10_1k68q"]
+[ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/map_set/scenes/plastform.tscn" id="10_1k68q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cojuk"]
 texture = ExtResource("3_trh2w")
