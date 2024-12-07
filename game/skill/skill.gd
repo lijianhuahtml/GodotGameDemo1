@@ -2,7 +2,8 @@
 class_name Skill extends Node
 
 enum SkillType {
-	Dash
+	Dash,
+	Bullet,
 }
 
 ## 技能列表
@@ -30,7 +31,7 @@ func get_skill(type: SkillType) -> BaseSkillData:
 	return skills[index]
 
 # 尝试使用技能
-func try_execute(executor: Node, type : SkillType):
+func try_execute(executor: Node, type : SkillType, running_data = null):
 	if executor == null:
 		return
 	var skill = get_skill(type)
@@ -47,16 +48,18 @@ func try_execute(executor: Node, type : SkillType):
 		executor.attr.mp.cur -= skill.cost
 	
 	# 执行技能逻辑
-	execute(executor, skill)
+	execute(executor, skill, running_data)
 	
 	# 启动冷却倒计时
 	start_cooldown(skill)
 
 # 执行技能
-func execute(executor: Node, skill: BaseSkillData):
+func execute(executor: Node, skill: BaseSkillData, running_data):
 	match skill.type:
 		SkillType.Dash:
 			add_child(SkillDash.new(executor, skill))
+		SkillType.Bullet:
+			add_child(SkillBullet.new(executor, skill, running_data))
 
 # 冷却计时器
 func start_cooldown(skill : BaseSkillData):

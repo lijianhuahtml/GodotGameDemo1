@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -300.0
 @onready var camera: Camera2D = $Camera2D
 @onready var map: TileMapLayer = $"../Map"
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var shooting_point: Marker2D = $ShootingPoint
 
 
 ## 技能
@@ -37,6 +38,13 @@ func _process(_delta: float) -> void:
 		return
 	if Input.is_action_just_released("dash"):
 		skill.try_execute(self, Skill.SkillType.Dash)
+	if Input.is_action_pressed("shoot"):
+		var running_data = {}
+		running_data.pos = shooting_point.global_position
+		# 计算从玩家位置到鼠标位置的方向向量
+		var direction = get_global_mouse_position() - global_position
+		running_data.rotation = direction.angle()
+		skill.try_execute(self, Skill.SkillType.Bullet, running_data)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
