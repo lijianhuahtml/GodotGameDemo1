@@ -203,7 +203,7 @@ skill = NodePath("Skill")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_3laqw")
-animation = &"run"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
