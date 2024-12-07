@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillDashData" load_steps=2 format=3 uid="uid://gkemnyt58nfl"]
+
+[ext_resource type="Script" path="res://game/skill/dash/skill_dash_data.gd" id="1_8pfup"]
+
+[resource]
+script = ExtResource("1_8pfup")
+speed = 1000.0
+dash_time = 0.1
+id = 0
+name = "冲刺"
+cooldown = 1

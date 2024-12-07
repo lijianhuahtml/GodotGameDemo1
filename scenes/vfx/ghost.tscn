@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsml3n1c3r8li"]
-
-[ext_resource type="Script" path="res://scripts/vfx/ghost.gd" id="1_ivdsd"]
-
-[node name="Ghost" type="Sprite2D"]
-script = ExtResource("1_ivdsd")

@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5voiengnpqyf"]
+
+[ext_resource type="Script" path="res://game/room/scripts/room_item.gd" id="1_x141y"]
+
+[node name="Control2" type="Control" node_paths=PackedStringArray("room_id", "room_size")]
+custom_minimum_size = Vector2(400, 90)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_x141y")
+room_id = NodePath("Panel/RoomIdValueLabel")
+room_size = NodePath("Panel/RoomSizeValueLabel")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 80.0
+
+[node name="RoomIdLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_top = 10.0
+offset_right = -300.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "房间id："
+
+[node name="RoomIdValueLabel" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 110.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 33.0
+
+[node name="RoomSizeLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -23.0
+offset_right = -300.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "房间人数："
+
+[node name="RoomSizeValueLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -33.0
+offset_right = -50.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="JoinRoomButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = -30.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "加入"
+
+[connection signal="pressed" from="Panel/JoinRoomButton" to="." method="join"]
