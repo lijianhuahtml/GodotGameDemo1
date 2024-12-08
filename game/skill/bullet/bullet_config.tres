@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_t8ais")
-speed = 200.0
+speed = 300.0
 range = 400.0
 type = 1
 name = "子弹"

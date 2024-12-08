@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci2yorfnv5eyo"]
+
+[ext_resource type="Script" path="res://game/enemy/boids/boids.gd" id="1_fdtq3"]
+[ext_resource type="PackedScene" uid="uid://nenb1450mq2x" path="res://game/enemy/boids/bird.tscn" id="2_i587d"]
+
+[node name="Boids" type="Node2D"]
+script = ExtResource("1_fdtq3")
+BoidScene = ExtResource("2_i587d")

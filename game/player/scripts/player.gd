@@ -35,7 +35,7 @@ func _ready() -> void:
 	map_size = map.tile_set.tile_size
 	# 玩家CollisionShape2D宽度
 	player_width = collision_shape.shape.get_rect().size.x
-
+	attr.hp.changed.connect(hp_changed)
 
 func _process(_delta: float) -> void:
 	if is_lock_operation:
@@ -115,3 +115,6 @@ func update_velocity(delta: float):
 			velocity.x = direction * speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
+
+func hp_changed():
+	pass

@@ -142,7 +142,7 @@ radius = 8.0
 [node name="Bullet" type="Area2D"]
 top_level = true
 z_index = 2
-collision_layer = 2
+collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_x04bc")
 
@@ -159,4 +159,5 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_gvlj3")
 one_way_collision_margin = 0.0
 
+[connection signal="area_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
