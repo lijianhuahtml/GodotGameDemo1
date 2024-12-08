@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b855cv72kbxk7"]
+[gd_scene load_steps=49 format=3 uid="uid://b855cv72kbxk7"]
 
 [ext_resource type="Script" path="res://game/player/scripts/player.gd" id="1_nmfm8"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/knight.png" id="1_p15u6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://game/skill/skill.gd" id="3_n60c3"]
 [ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_iq3yf"]
 [ext_resource type="Script" path="res://game/skill/dash/skill_dash_data.gd" id="4_t5ib6"]
+[ext_resource type="Resource" uid="uid://1ul21ewyo50x" path="res://game/item/inventory/player_inventory.tres" id="5_3dix0"]
 [ext_resource type="Script" path="res://game/skill/base_skill.gd" id="8_ht30x"]
 [ext_resource type="Resource" uid="uid://fss6f15tvx28" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
 
@@ -281,7 +282,7 @@ speed = 1000.0
 dash_time = 0.1
 type = 0
 name = "冲刺"
-cooldown = 1
+cooldown = 1.0
 cost = 10.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -289,6 +290,7 @@ z_index = 5
 collision_layer = 2
 script = ExtResource("1_nmfm8")
 attr = SubResource("Resource_c5fag")
+inventory = ExtResource("5_3dix0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
