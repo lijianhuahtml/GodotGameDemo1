@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bped01tsjeycn"
-path="res://.godot/imported/coin.png-3d0b14c4d2b2bf59bcb193c1b097c39a.ctex"
+uid="uid://tasasypyjrt0"
+path="res://.godot/imported/TextBTN_Big_Pressed.png-baa3bcae9d842ca7079b27bc7d2cfde2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/item/coin.png"
-dest_files=["res://.godot/imported/coin.png-3d0b14c4d2b2bf59bcb193c1b097c39a.ctex"]
+source_file="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/TextBTN_Big_Pressed.png"
+dest_files=["res://.godot/imported/TextBTN_Big_Pressed.png-baa3bcae9d842ca7079b27bc7d2cfde2.ctex"]
 
 [params]
 
