@@ -11,90 +11,103 @@
 [ext_resource type="Script" path="res://game/skill/base_skill.gd" id="8_ht30x"]
 [ext_resource type="Resource" uid="uid://fss6f15tvx28" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
 
-[sub_resource type="Resource" id="Resource_a36g1"]
+[sub_resource type="Resource" id="Resource_7chbb"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_ha5da"]
+[sub_resource type="Resource" id="Resource_xfdxm"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_uvf6u"]
+[sub_resource type="Resource" id="Resource_l41pj"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_htaib"]
+[sub_resource type="Resource" id="Resource_auphu"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_4v2ox"]
+[sub_resource type="Resource" id="Resource_t66d4"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_yr0ho"]
+[sub_resource type="Resource" id="Resource_1afcu"]
+resource_local_to_scene = true
 script = ExtResource("3_6u5ak")
 max = 100.0
 cur = 100.0
 
-[sub_resource type="Resource" id="Resource_qm3u1"]
+[sub_resource type="Resource" id="Resource_fvs2d"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_ocqq2"]
+[sub_resource type="Resource" id="Resource_vufrr"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_tp5lu"]
+[sub_resource type="Resource" id="Resource_go0tf"]
+resource_local_to_scene = true
 script = ExtResource("3_6u5ak")
 max = 100.0
 cur = 100.0
 
-[sub_resource type="Resource" id="Resource_rjs8t"]
+[sub_resource type="Resource" id="Resource_qgrfh"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 30.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_0sl50"]
+[sub_resource type="Resource" id="Resource_klylh"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_raif5"]
+[sub_resource type="Resource" id="Resource_nqmx6"]
+resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 130.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_c5fag"]
+[sub_resource type="Resource" id="Resource_a4jrp"]
+resource_local_to_scene = true
 script = ExtResource("4_iq3yf")
-hp = SubResource("Resource_yr0ho")
-mp = SubResource("Resource_tp5lu")
-p_atk = SubResource("Resource_rjs8t")
-m_atk = SubResource("Resource_qm3u1")
-p_def = SubResource("Resource_0sl50")
-m_def = SubResource("Resource_ocqq2")
-speed = SubResource("Resource_raif5")
-crit = SubResource("Resource_a36g1")
-crit_rate = SubResource("Resource_ha5da")
-eva = SubResource("Resource_4v2ox")
-dmg_inc = SubResource("Resource_uvf6u")
-dmg_red = SubResource("Resource_htaib")
+hp = SubResource("Resource_1afcu")
+mp = SubResource("Resource_go0tf")
+p_atk = SubResource("Resource_qgrfh")
+m_atk = SubResource("Resource_fvs2d")
+p_def = SubResource("Resource_klylh")
+m_def = SubResource("Resource_vufrr")
+speed = SubResource("Resource_nqmx6")
+crit = SubResource("Resource_7chbb")
+crit_rate = SubResource("Resource_xfdxm")
+eva = SubResource("Resource_t66d4")
+dmg_inc = SubResource("Resource_l41pj")
+dmg_red = SubResource("Resource_auphu")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j27c"]
 atlas = ExtResource("1_p15u6")
@@ -289,7 +302,7 @@ cost = 10.0
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_nmfm8")
-attr = SubResource("Resource_c5fag")
+attr = SubResource("Resource_a4jrp")
 inventory = ExtResource("5_3dix0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

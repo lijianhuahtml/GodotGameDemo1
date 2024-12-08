@@ -1,0 +1,163 @@
+[gd_scene load_steps=25 format=3 uid="uid://nenb1450mq2x"]
+
+[ext_resource type="Script" path="res://game/enemy/boids/bird.gd" id="1_uwvdq"]
+[ext_resource type="Script" path="res://game/attributes/attributes_float.gd" id="2_2whc6"]
+[ext_resource type="Texture2D" uid="uid://dkr7stu7r0n8l" path="res://assets/sprites/enemies/bee/Bee.png" id="2_xpp4t"]
+[ext_resource type="Script" path="res://game/attributes/attributes_cons.gd" id="3_oieiq"]
+[ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_asl1i"]
+
+[sub_resource type="Resource" id="Resource_w6ou0"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_3u0w4"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_peaq2"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_1ikn6"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_odbnn"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_2ohdj"]
+resource_local_to_scene = true
+script = ExtResource("3_oieiq")
+max = 50.0
+cur = 50.0
+
+[sub_resource type="Resource" id="Resource_e44k5"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_kddba"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_fiv85"]
+resource_local_to_scene = true
+script = ExtResource("3_oieiq")
+max = 0.0
+cur = 0.0
+
+[sub_resource type="Resource" id="Resource_7xc1q"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 10.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_xr44m"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_upa0u"]
+resource_local_to_scene = true
+script = ExtResource("2_2whc6")
+base = 200.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_3fbf7"]
+resource_local_to_scene = true
+script = ExtResource("4_asl1i")
+hp = SubResource("Resource_2ohdj")
+mp = SubResource("Resource_fiv85")
+p_atk = SubResource("Resource_7xc1q")
+m_atk = SubResource("Resource_e44k5")
+p_def = SubResource("Resource_xr44m")
+m_def = SubResource("Resource_kddba")
+speed = SubResource("Resource_upa0u")
+crit = SubResource("Resource_w6ou0")
+crit_rate = SubResource("Resource_3u0w4")
+eva = SubResource("Resource_odbnn")
+dmg_inc = SubResource("Resource_peaq2")
+dmg_red = SubResource("Resource_1ikn6")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67etv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0p0h"]
+atlas = ExtResource("2_xpp4t")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7fqo"]
+atlas = ExtResource("2_xpp4t")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngtst"]
+atlas = ExtResource("2_xpp4t")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jasyu"]
+atlas = ExtResource("2_xpp4t")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwew7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0p0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7fqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngtst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jasyu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Bird" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_uwvdq")
+attr = SubResource("Resource_3fbf7")
+max_force = 15
+perception_radius = 500
+alignment_weight = 0.6
+cohesion_weight = 1.75
+separation_weight = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_67etv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iwew7")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
