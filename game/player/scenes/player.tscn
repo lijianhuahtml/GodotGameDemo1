@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_iq3yf"]
 [ext_resource type="Script" path="res://game/skill/dash/skill_dash_data.gd" id="4_t5ib6"]
 [ext_resource type="Script" path="res://game/skill/base_skill.gd" id="8_ht30x"]
-[ext_resource type="Resource" uid="uid://fss6f15tvx28" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
+[ext_resource type="Resource" uid="uid://bwjsukop5cwiq" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
 
 [sub_resource type="Resource" id="Resource_a36g1"]
 script = ExtResource("2_k6e1t")
@@ -281,7 +281,7 @@ speed = 1000.0
 dash_time = 0.1
 type = 0
 name = "冲刺"
-cooldown = 1
+cooldown = 1.0
 cost = 10.0
 
 [node name="Player" type="CharacterBody2D"]
