@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c1ih86ecoxm3r"]
+[gd_scene load_steps=17 format=4 uid="uid://c1ih86ecoxm3r"]
 
 [ext_resource type="Script" path="res://game/level/scripts/game_manager.gd" id="1_3qc25"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_tfq7v"]
@@ -8,10 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://game/enemy/scenes/slime.tscn" id="6_i4cy2"]
 [ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://game/enemy/scenes/boss.tscn" id="7_1khp1"]
 [ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/map_set/scenes/killzone.tscn" id="8_x3bow"]
-[ext_resource type="PackedScene" uid="uid://cf1t278ix2w0c" path="res://game/item/items/coin/coin.tscn" id="9_3ph00"]
+[ext_resource type="PackedScene" uid="uid://cf1t278ix2w0c" path="res://game/item/scenes/coin.tscn" id="9_3ph00"]
 [ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/map_set/scenes/plastform.tscn" id="10_1k68q"]
-[ext_resource type="PackedScene" uid="uid://dc1c1iqfmjgmf" path="res://game/item/scenes/item.tscn" id="11_50ucq"]
-[ext_resource type="Resource" uid="uid://cxsbsuvj3cn7m" path="res://game/item/items/coin/coin.tres" id="12_qutey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cojuk"]
 texture = ExtResource("3_trh2w")
@@ -239,44 +237,30 @@ shape = SubResource("WorldBoundaryShape2D_3qhi6")
 
 [node name="Coin" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(56, 57)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin2" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(215, 57)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin3" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(200, -39)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin4" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(472, 25)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin5" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(648, 56)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin6" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(840, 56)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin7" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(727, -40)
-item_data = ExtResource("12_qutey")
 
 [node name="Coin8" parent="Coins" instance=ExtResource("9_3ph00")]
-position = Vector2(552, 9)
-item_data = ExtResource("12_qutey")
+position = Vector2(472, 25)
 
 [node name="Coin9" parent="Coins" instance=ExtResource("9_3ph00")]
 position = Vector2(408, -71)
-item_data = ExtResource("12_qutey")
-
-[node name="Item" parent="Coins" instance=ExtResource("11_50ucq")]
-position = Vector2(1346, 12)
-item_data = ExtResource("12_qutey")
-float_height = 5.0
 
 [node name="Plastforms" type="Node" parent="."]
 

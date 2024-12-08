@@ -1,17 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfrkia5we5hlg"]
+[gd_scene load_steps=3 format=3 uid="uid://bfrkia5we5hlg"]
 
 [ext_resource type="Script" path="res://game/map/scripts/game.gd" id="1_5mnei"]
 [ext_resource type="PackedScene" uid="uid://c1ih86ecoxm3r" path="res://game/level/scenes/level_1.tscn" id="2_p56gh"]
-[ext_resource type="Script" path="res://game/ui/ui_root.gd" id="3_4vwy2"]
-[ext_resource type="PackedScene" uid="uid://cwui3tatwv35a" path="res://game/item/scenes/inventory_ui.tscn" id="3_pwg4l"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5mnei")
 
 [node name="level1" parent="." instance=ExtResource("2_p56gh")]
-
-[node name="UiRoot" type="CanvasLayer" parent="."]
-script = ExtResource("3_4vwy2")
-
-[node name="PlayerInventoryUi" parent="UiRoot" instance=ExtResource("3_pwg4l")]
-visible = false
