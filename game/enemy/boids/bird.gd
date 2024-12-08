@@ -2,8 +2,14 @@
 extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var progress_bar: ProgressBar = $ProgressBar
+
 
 @export var attr: Attributes
+var be_attacked = false
+var is_running = false
+var last_damage_time # 最后一次受到伤害的时间戳
+var show_hp_time = 3000 # 血条显示时间（毫秒）
 
 ## 最大转向力
 @export var max_force = 10:
@@ -126,8 +132,27 @@ func _on_body_entered(body: Node2D) -> void:
 		body.attr.take_damage(attr)
 
 func hp_changed():
+	last_damage_time = Time.get_ticks_msec() + show_hp_time
+	be_attacked = true
+	progress_bar.visible = true
+	progress_bar.max_value = attr.hp.max
+	progress_bar.value = attr.hp.cur
 	if attr.hp.cur <= 0:
 		death()
+	else:
+		if not be_attacked or not is_running:
+			_delayed_hide_bar()
+
+# 协程函数：延迟隐藏血条
+func _delayed_hide_bar() -> void:
+	is_running = true
+	while true:
+		be_attacked = false
+		await get_tree().create_timer((last_damage_time - Time.get_ticks_msec())/1000).timeout
+		if not be_attacked:
+			break 
+	progress_bar.visible = false	
+	is_running = false
 
 func death():
 	if not alive:

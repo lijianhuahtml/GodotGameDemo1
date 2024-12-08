@@ -1,8 +1,112 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvl0ax03f50gp"]
+[gd_scene load_steps=30 format=3 uid="uid://bvl0ax03f50gp"]
 
 [ext_resource type="Script" path="res://game/enemy/scripts/slime.gd" id="1_a1ef0"]
 [ext_resource type="Texture2D" uid="uid://64c3y3gh8stq" path="res://assets/sprites/enemies/slime/slime_green.png" id="2_akqkv"]
-[ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/map_set/scenes/killzone.tscn" id="2_xr81n"]
+[ext_resource type="Script" path="res://game/attributes/attributes_float.gd" id="2_dfolk"]
+[ext_resource type="Script" path="res://game/attributes/attributes_cons.gd" id="3_4x5e1"]
+[ext_resource type="PackedScene" uid="uid://dxxvk15uh4p87" path="res://game/enemy/scenes/lifebar.tscn" id="4_fank6"]
+[ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_osyqj"]
+
+[sub_resource type="Resource" id="Resource_61666"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_jyfun"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_t8jy3"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_5k68k"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_dgplj"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_4mk40"]
+script = ExtResource("3_4x5e1")
+max = 600.0
+cur = 600.0
+
+[sub_resource type="Resource" id="Resource_3wi1r"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_arcma"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_v5gyp"]
+script = ExtResource("3_4x5e1")
+max = 0.0
+cur = 0.0
+
+[sub_resource type="Resource" id="Resource_xdlkw"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_dupbt"]
+script = ExtResource("2_dfolk")
+base = 0.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_nm31c"]
+script = ExtResource("2_dfolk")
+base = 30.0
+add = 0.0
+mul = 1.0
+
+[sub_resource type="Resource" id="Resource_eytcu"]
+script = ExtResource("4_osyqj")
+hp = SubResource("Resource_4mk40")
+mp = SubResource("Resource_v5gyp")
+p_atk = SubResource("Resource_xdlkw")
+m_atk = SubResource("Resource_3wi1r")
+p_def = SubResource("Resource_dupbt")
+m_def = SubResource("Resource_arcma")
+speed = SubResource("Resource_nm31c")
+crit = SubResource("Resource_61666")
+crit_rate = SubResource("Resource_jyfun")
+eva = SubResource("Resource_dgplj")
+dmg_inc = SubResource("Resource_t8jy3")
+dmg_red = SubResource("Resource_5k68k")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d54oh"]
+atlas = ExtResource("2_akqkv")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmrmp"]
+atlas = ExtResource("2_akqkv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxbqi"]
+atlas = ExtResource("2_akqkv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0ypt"]
+atlas = ExtResource("2_akqkv")
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajxxk"]
 atlas = ExtResource("2_akqkv")
@@ -24,6 +128,23 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d54oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmrmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxbqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0ypt")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ajxxk")
 }, {
 "duration": 1.0,
@@ -40,24 +161,25 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqsc7"]
-size = Vector2(10, 13)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kucl1"]
+size = Vector2(12, 13)
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_a1ef0")
+attr = SubResource("Resource_eytcu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ru11l")
-animation = &"walk"
+animation = &"death"
 autoplay = "walk"
-frame_progress = 0.276969
+frame = 3
+frame_progress = 1.0
 
-[node name="Killzone" parent="." instance=ExtResource("2_xr81n")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6.5)
-shape = SubResource("RectangleShape2D_wqsc7")
+shape = SubResource("RectangleShape2D_kucl1")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
@@ -66,3 +188,11 @@ target_position = Vector2(11, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
 target_position = Vector2(-11, 0)
+
+[node name="ProgressBar" parent="." instance=ExtResource("4_fank6")]
+visible = false
+offset_left = -10.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = -17.0
+metadata/_edit_use_anchors_ = true

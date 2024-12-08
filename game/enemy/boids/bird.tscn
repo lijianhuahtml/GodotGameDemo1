@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://nenb1450mq2x"]
+[gd_scene load_steps=26 format=3 uid="uid://nenb1450mq2x"]
 
 [ext_resource type="Script" path="res://game/enemy/boids/bird.gd" id="1_uwvdq"]
 [ext_resource type="Script" path="res://game/attributes/attributes_float.gd" id="2_2whc6"]
 [ext_resource type="Texture2D" uid="uid://dkr7stu7r0n8l" path="res://assets/sprites/enemies/bee/Bee.png" id="2_xpp4t"]
 [ext_resource type="Script" path="res://game/attributes/attributes_cons.gd" id="3_oieiq"]
 [ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_asl1i"]
+[ext_resource type="PackedScene" uid="uid://dxxvk15uh4p87" path="res://game/enemy/scenes/lifebar.tscn" id="6_ei71x"]
 
 [sub_resource type="Resource" id="Resource_w6ou0"]
 resource_local_to_scene = true
@@ -159,5 +160,12 @@ shape = SubResource("CircleShape2D_67etv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iwew7")
 autoplay = "default"
+
+[node name="ProgressBar" parent="." instance=ExtResource("6_ei71x")]
+visible = false
+offset_left = -7.0
+offset_top = -11.0
+offset_right = 7.0
+offset_bottom = -8.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
