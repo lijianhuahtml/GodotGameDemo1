@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxgcftpqe63va"
-path="res://.godot/imported/EnergyBall.png-1594b9531a14b09dbf1db2a5e3e4b1c1.ctex"
+uid="uid://chdck6enbx76o"
+path="res://.godot/imported/Cactus_1.png-dda1a252364882a79eb37f8db07a8792.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/EnergyBall.png"
-dest_files=["res://.godot/imported/EnergyBall.png-1594b9531a14b09dbf1db2a5e3e4b1c1.ctex"]
+source_file="res://assets/sprites/enemies/cactus/Cactus_1.png"
+dest_files=["res://.godot/imported/Cactus_1.png-dda1a252364882a79eb37f8db07a8792.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0q2g65ahgok"
-path="res://.godot/imported/world_tileset.png-61a32465f33c3d9d3bfecb75b6485009.ctex"
+uid="uid://bxdr0iuh1eiwu"
+path="res://.godot/imported/Balloon_4.png-6b6e77112e0e28f77cb1a8b9bb392620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/world_tileset.png"
-dest_files=["res://.godot/imported/world_tileset.png-61a32465f33c3d9d3bfecb75b6485009.ctex"]
+source_file="res://assets/sprites/enemies/balloon/Balloon_4.png"
+dest_files=["res://.godot/imported/Balloon_4.png-6b6e77112e0e28f77cb1a8b9bb392620.ctex"]
 
 [params]
 

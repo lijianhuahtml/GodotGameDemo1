@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b126wmvcolbvb"
-path="res://.godot/imported/energyBallImpact.png-c4b7790f92aca3ffac8c06e7943a5de9.ctex"
+uid="uid://dxgcftpqe63va"
+path="res://.godot/imported/EnergyBall.png-23315aae7c04d577cc29e0e7e282e6ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/energyBallImpact.png"
-dest_files=["res://.godot/imported/energyBallImpact.png-c4b7790f92aca3ffac8c06e7943a5de9.ctex"]
+source_file="res://assets/sprites/skill/EnergyBall.png"
+dest_files=["res://.godot/imported/EnergyBall.png-23315aae7c04d577cc29e0e7e282e6ff.ctex"]
 
 [params]
 

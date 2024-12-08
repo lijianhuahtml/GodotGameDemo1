@@ -4,10 +4,11 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = $"../../Player"
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-const SPEED = 40 # 行走速度
+
 const OFFSET = 20  # Boss走到玩家前面一点的距离
 
-var hp = 100.0 # 血量
+## 属性
+@export var attr: Attributes
 var alive = true # 是否活着
 var is_attack = false # 是否在攻击
 
@@ -36,16 +37,17 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("move")
 			# 设置速度，只在X轴方向上移动
-			velocity = Vector2(move_direction.x, 0) * SPEED
+			velocity = Vector2(move_direction.x, 0) * attr.speed.value()
 	
 	move_and_slide()
 
 
 func take_damage():
-	hp -= 10
-	progress_bar.value = hp
-	if hp <= 0:
-		death()
+	#hp -= 10
+	#progress_bar.value = hp
+	#if hp <= 0:
+		#death()
+	pass
 
 func death():
 	alive = false

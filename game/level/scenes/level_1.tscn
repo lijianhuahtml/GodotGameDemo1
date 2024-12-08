@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game/level/scripts/game_manager.gd" id="1_3qc25"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_tfq7v"]
-[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="3_trh2w"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/map/world_tileset.png" id="3_trh2w"]
 [ext_resource type="PackedScene" uid="uid://bxrg5oekq7eff" path="res://game/map/scenes/map1.tscn" id="4_3d45a"]
 [ext_resource type="PackedScene" uid="uid://b855cv72kbxk7" path="res://game/player/scenes/player.tscn" id="5_nwho0"]
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://game/enemy/scenes/slime.tscn" id="6_i4cy2"]

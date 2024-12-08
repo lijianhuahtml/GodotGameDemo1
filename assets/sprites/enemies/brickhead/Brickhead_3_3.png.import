@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gx1xihdbejvu"
-path="res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex"
+uid="uid://cgksdcgmaduve"
+path="res://.godot/imported/Brickhead_3_3.png-90690fe14280914ffc318846f2017b6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fruit.png"
-dest_files=["res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex"]
+source_file="res://assets/sprites/enemies/brickhead/Brickhead_3_3.png"
+dest_files=["res://.godot/imported/Brickhead_3_3.png-90690fe14280914ffc318846f2017b6f.ctex"]
 
 [params]
 
