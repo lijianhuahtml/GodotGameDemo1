@@ -1,98 +1,98 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=17 format=3 uid="uid://cxsbsuvj3cn7m"]
 
-[ext_resource type="Texture2D" uid="uid://bped01tsjeycn" path="res://assets/sprites/coin.png" id="1_ooq3j"]
+[ext_resource type="Texture2D" uid="uid://bped01tsjeycn" path="res://assets/sprites/item/coin.png" id="1_bs7de"]
 [ext_resource type="Script" path="res://game/item/scripts/item_data.gd" id="2_64203"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nuqx"]
-atlas = ExtResource("1_ooq3j")
+atlas = ExtResource("1_bs7de")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ripk"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7amgy"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnogs"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7duu1"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7c1vm"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n84ig"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yrsa"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwws7"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jsvwd"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny6x5"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dy8q3"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfgta"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(80, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_76jba"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uq5l"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(96, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6h1g6"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_no7uq"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(112, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7f4fi"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rfwt"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(128, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hc6oj"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ftia"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(144, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_farta"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfxmx"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(160, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l0jnm"]
-atlas = ExtResource("1_ooq3j")
+[sub_resource type="AtlasTexture" id="AtlasTexture_von58"]
+atlas = ExtResource("1_bs7de")
 region = Rect2(176, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yjywp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i5bd0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ripk")
+"texture": SubResource("AtlasTexture_7amgy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qnogs")
+"texture": SubResource("AtlasTexture_7duu1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7c1vm")
+"texture": SubResource("AtlasTexture_n84ig")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2yrsa")
+"texture": SubResource("AtlasTexture_kwws7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jsvwd")
+"texture": SubResource("AtlasTexture_ny6x5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dy8q3")
+"texture": SubResource("AtlasTexture_rfgta")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_76jba")
+"texture": SubResource("AtlasTexture_0uq5l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6h1g6")
+"texture": SubResource("AtlasTexture_no7uq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7f4fi")
+"texture": SubResource("AtlasTexture_0rfwt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hc6oj")
+"texture": SubResource("AtlasTexture_7ftia")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_farta")
+"texture": SubResource("AtlasTexture_nfxmx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l0jnm")
+"texture": SubResource("AtlasTexture_von58")
 }],
 "loop": true,
 "name": &"default",
@@ -104,6 +104,6 @@ script = ExtResource("2_64203")
 type = 0
 name = "金币"
 icon = SubResource("AtlasTexture_3nuqx")
-sprites = SubResource("SpriteFrames_yjywp")
+sprites = SubResource("SpriteFrames_i5bd0")
 stack = 9999
 desc = "金币"

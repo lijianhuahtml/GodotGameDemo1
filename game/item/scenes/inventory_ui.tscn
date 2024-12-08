@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwui3tatwv35a"]
 
 [ext_resource type="Script" path="res://game/item/scripts/inventory_ui.gd" id="1_quxmk"]
-[ext_resource type="Texture2D" uid="uid://c1r468unkaivd" path="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/Fantasy Wooden GUI  Free/PNG/UI board Large  stone.png" id="2_wg4ie"]
-[ext_resource type="Texture2D" uid="uid://cvomvyyw2vunf" path="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/Fantasy Wooden GUI  Free/PNG/UI board Large  parchment.png" id="3_beajt"]
-[ext_resource type="Texture2D" uid="uid://k87le86wmqoe" path="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/Fantasy Wooden GUI  Free/PNG/IRONY TITLE  Large.png" id="4_bmckw"]
+[ext_resource type="Texture2D" uid="uid://c1r468unkaivd" path="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/UI board Large  stone.png" id="2_wg4ie"]
+[ext_resource type="Texture2D" uid="uid://cvomvyyw2vunf" path="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/UI board Large  parchment.png" id="3_beajt"]
+[ext_resource type="Texture2D" uid="uid://k87le86wmqoe" path="res://assets/sprites/inventory/Fantasy Wooden GUI  Free/IRONY TITLE  Large.png" id="4_bmckw"]
 [ext_resource type="PackedScene" uid="uid://bbw4fldcinyae" path="res://game/item/scenes/slot_ui.tscn" id="5_d8lho"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqk63"]

@@ -6,6 +6,7 @@ var speed
 var range
  # 记录子弹飞行距离
 var travelled_distance = 0
+var executor: Node2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -27,11 +28,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	animated_sprite.play("impact")
-	if body.has_method("take_damage"):
-		body.take_damage()
+	if executor.attr and body.attr:
+		body.attr.take_damage(executor.attr)
 	await animated_sprite.animation_finished
 	queue_free()
  
-func set_data(data: SkillBulletData):
+func set_data(executor: Node, data: SkillBulletData):
+	self.executor = executor
 	speed = data.speed
 	range = data.range

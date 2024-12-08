@@ -18,7 +18,7 @@ func _init(executor: Node, data: SkillBulletData, running_data):
 func _ready() -> void:
 	# 创建 bullet.tscn 的一个实例
 	var bullet = BULLET.instantiate()
-	bullet.set_data(data)
+	bullet.set_data(executor, data)
 	# 将子弹的全局位置设置为发射点的全局位置。
 	bullet.global_position = pos
 	# 设置子弹的旋转角度与发射点一致，使子弹沿正确的方向飞行。

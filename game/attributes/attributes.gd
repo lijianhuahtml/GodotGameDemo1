@@ -52,7 +52,7 @@ func take_damage(attrs: Attributes):
 	var is_critical = randf() * 100 < attrs.crit.value()
 	var critical = attrs.crit_rate.value() / 100 if is_critical else 1
 	# 计算最终伤害（未闪避）：基础伤害 * 对方暴击伤害 * 对方增伤 / 己方减伤
-	damage = damage * critical * attrs.dmg_inc.value() / 100 / dmg_red.value() / 100
+	damage = damage * critical * (attrs.dmg_inc.value() + 100) / 100 / ((dmg_red.value() + 100) / 100)
 	hp.cur -= damage
 
 # 合并另一个属性到自身

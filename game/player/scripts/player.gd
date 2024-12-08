@@ -10,7 +10,6 @@ const JUMP_VELOCITY = -300.0
 @onready var shooting_point: Marker2D = $ShootingPoint
 @onready var ui_root: UiRoot
 
-
 ## 技能
 @onready var skill: Skill = $Skill
 ## 是否锁定操作
