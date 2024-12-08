@@ -8,5 +8,5 @@ speed = 200.0
 range = 400.0
 type = 1
 name = "子弹"
-cooldown = 0.1
+cooldown = 0.2
 cost = 0.0

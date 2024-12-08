@@ -1,8 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://b135d2b1mad2q"]
 
-[ext_resource type="Texture2D" uid="uid://dxgcftpqe63va" path="res://assets/sprites/EnergyBall.png" id="1_s1yro"]
+[ext_resource type="Texture2D" uid="uid://dxgcftpqe63va" path="res://assets/sprites/skill/EnergyBall.png" id="1_s1yro"]
 [ext_resource type="Script" path="res://game/skill/bullet/bullet.gd" id="1_x04bc"]
-[ext_resource type="Texture2D" uid="uid://b126wmvcolbvb" path="res://assets/sprites/energyBallImpact.png" id="2_ku5jp"]
+[ext_resource type="Texture2D" uid="uid://b126wmvcolbvb" path="res://assets/sprites/skill/energyBallImpact.png" id="2_ku5jp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbqga"]
 atlas = ExtResource("2_ku5jp")
@@ -152,8 +152,6 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ir7aj")
 animation = &"impact"
 autoplay = "send"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)

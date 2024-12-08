@@ -24,6 +24,7 @@ var is_jump := false
 var used
 var map_size
 var player_width
+var direction
 
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
@@ -55,24 +56,7 @@ func _process(_delta: float) -> void:
 		ui_root.player_inventory_ui.visible = !ui_root.player_inventory_ui.visible
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		is_jump = true
-	
-	# 二段跳的判断逻辑
-	if Input.is_action_just_pressed("jump") and not is_on_floor() and is_jump:
-		velocity.y = JUMP_VELOCITY
-		is_jump = false
-	
-	# 如果不按下如何按钮 direction = 0
-	# 如果按下左键 direction = -1
-	# 如果按下右键 direction = 1
-	var direction := Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	
 	# 翻转精灵
 	if direction > 0:
@@ -80,22 +64,51 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 	
+	jump()
+	double_jump()
+	state_judgement()
+	update_velocity(delta)
+	move_range()
+
+	move_and_slide()
+
+# 单车跳跃判断逻辑
+func jump():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		is_jump = true
+
+# 二段跳判断逻辑
+func double_jump():
+	if Input.is_action_just_pressed("jump") and not is_on_floor() and is_jump:
+		velocity.y = JUMP_VELOCITY
+		is_jump = false
+		
+# 角色移动边界限制
+func move_range():
+	# 计算地图的边界（像素单位）
+	var map_left = used.position.x * map_size.x + player_width / 2
+	var map_right = used.end.x * map_size.x - player_width / 2
+	position.x = clamp(position.x, map_left, map_right)
+	
+# 角色动画状态的判断
+func state_judgement():
 	# 判断是否在地面上
 	if is_on_floor():
-		# 如果没有操作
 		if direction == 0:
-			# 播放闲置动画
 			animated_sprite.play("idle")
 		else:
-			# 播放奔跑动画
-			animated_sprite.play("run")		
-	# 离开地面
+			animated_sprite.play("run")
 	elif velocity.y < 0:
-		# 播放跳跃上升动画
 		animated_sprite.play("jump")
 	else:
-		# 播放跳跃下降动画
-		animated_sprite.play("fall")	
+		animated_sprite.play("fall")
+
+# 更新调整速度velocity
+func update_velocity(delta: float):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	
 	var speed = attr.speed.value()
 	if not is_lock_operation:
@@ -103,11 +116,3 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction * speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
-			
-	# 计算地图的边界（像素单位）
-	var map_left = used.position.x * map_size.x + player_width / 2
-	var map_right = used.end.x * map_size.x - player_width / 2
-	
-	position.x = clamp(position.x, map_left, map_right)
-
-	move_and_slide()

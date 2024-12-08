@@ -1,0 +1,109 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=17 format=3 uid="uid://cxsbsuvj3cn7m"]
+
+[ext_resource type="Texture2D" uid="uid://bped01tsjeycn" path="res://assets/sprites/coin.png" id="1_ooq3j"]
+[ext_resource type="Script" path="res://game/item/scripts/item_data.gd" id="2_64203"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nuqx"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ripk"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnogs"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c1vm"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yrsa"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsvwd"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy8q3"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76jba"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h1g6"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f4fi"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc6oj"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_farta"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0jnm"]
+atlas = ExtResource("1_ooq3j")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjywp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ripk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnogs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c1vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yrsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsvwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy8q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76jba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h1g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f4fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc6oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_farta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0jnm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[resource]
+script = ExtResource("2_64203")
+type = 0
+name = "金币"
+icon = SubResource("AtlasTexture_3nuqx")
+sprites = SubResource("SpriteFrames_yjywp")
+stack = 9999
+desc = "金币"

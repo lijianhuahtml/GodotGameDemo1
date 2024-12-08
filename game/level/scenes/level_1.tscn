@@ -1,13 +1,12 @@
-[gd_scene load_steps=20 format=4 uid="uid://c1ih86ecoxm3r"]
+[gd_scene load_steps=19 format=4 uid="uid://c1ih86ecoxm3r"]
 
 [ext_resource type="Script" path="res://game/level/scripts/game_manager.gd" id="1_3qc25"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_tfq7v"]
-[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="3_trh2w"]
+[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/map/world_tileset.png" id="3_trh2w"]
 [ext_resource type="PackedScene" uid="uid://bxrg5oekq7eff" path="res://game/map/scenes/map1.tscn" id="4_3d45a"]
 [ext_resource type="PackedScene" uid="uid://b855cv72kbxk7" path="res://game/player/scenes/player.tscn" id="5_nwho0"]
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://game/enemy/scenes/slime.tscn" id="6_i4cy2"]
 [ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://game/enemy/scenes/boss.tscn" id="7_1khp1"]
-[ext_resource type="Script" path="res://game/enemy/scripts/boss.gd" id="8_l6i38"]
 [ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/map_set/scenes/killzone.tscn" id="8_x3bow"]
 [ext_resource type="PackedScene" uid="uid://cf1t278ix2w0c" path="res://game/item/items/coin/coin.tscn" id="9_3ph00"]
 [ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/map_set/scenes/plastform.tscn" id="10_1k68q"]
@@ -229,7 +228,6 @@ position = Vector2(392, -64)
 [node name="Boss" parent="Enemy" instance=ExtResource("7_1khp1")]
 z_index = 1
 position = Vector2(1200, 64)
-script = ExtResource("8_l6i38")
 
 [node name="Killzone" parent="." instance=ExtResource("8_x3bow")]
 position = Vector2(56, 122)
