@@ -18,6 +18,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not alive:
 		return
+		
+	if not is_on_floor():
+		velocity += get_gravity() * delta	
+		
 	# 计算Boss和玩家的相对位置
 	var direction = global_position.direction_to(player.global_position)
 	
@@ -39,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("move")
 			# 设置速度，只在X轴方向上移动
-			velocity = Vector2(move_direction.x, 0) * attr.speed.value()
+			velocity.x = direction.x * attr.speed.value()
 	
 	move_and_slide()
 

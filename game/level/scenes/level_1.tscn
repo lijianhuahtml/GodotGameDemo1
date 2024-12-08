@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://c1ih86ecoxm3r"]
+[gd_scene load_steps=49 format=4 uid="uid://c1ih86ecoxm3r"]
 
 [ext_resource type="Script" path="res://game/level/scripts/game_manager.gd" id="1_3qc25"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_tfq7v"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/map_set/scenes/plastform.tscn" id="10_1k68q"]
 [ext_resource type="PackedScene" uid="uid://dc1c1iqfmjgmf" path="res://game/item/scenes/item.tscn" id="11_50ucq"]
 [ext_resource type="Resource" uid="uid://cxsbsuvj3cn7m" path="res://game/item/items/coin/coin.tres" id="12_qutey"]
+[ext_resource type="PackedScene" uid="uid://fhkjxb13vxou" path="res://game/enemy/scenes/beach_ball.tscn" id="16_dflwj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cojuk"]
 texture = ExtResource("3_trh2w")
@@ -397,6 +398,7 @@ tile_set = SubResource("TileSet_eafyg")
 metadata/_edit_lock_ = true
 
 [node name="Map" parent="." instance=ExtResource("4_3d45a")]
+position = Vector2(1, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_nwho0")]
 position = Vector2(728, -43)
@@ -418,6 +420,9 @@ position = Vector2(1200, 64)
 attr = SubResource("Resource_yq1v2")
 
 [node name="Boids" parent="Enemy" instance=ExtResource("8_uur5j")]
+
+[node name="BeachBall" parent="Enemy" instance=ExtResource("16_dflwj")]
+position = Vector2(888, 65)
 
 [node name="Killzone" parent="." instance=ExtResource("8_x3bow")]
 position = Vector2(56, 122)
