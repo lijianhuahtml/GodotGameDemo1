@@ -1,6 +1,7 @@
-[gd_scene load_steps=62 format=3 uid="uid://coj8iik7rfwyg"]
+[gd_scene load_steps=63 format=3 uid="uid://coj8iik7rfwyg"]
 
 [ext_resource type="Texture2D" uid="uid://h22ph7eacvav" path="res://assets/sprites/Boss.png" id="1_p1a1y"]
+[ext_resource type="Script" path="res://game/enemy/scripts/boss.gd" id="1_u4ks5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3jjy"]
 atlas = ExtResource("1_p1a1y")
@@ -492,6 +493,7 @@ corner_radius_bottom_left = 8
 [node name="Boss" type="CharacterBody2D"]
 collision_layer = 4
 platform_wall_layers = 4095
+script = ExtResource("1_u4ks5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -16)

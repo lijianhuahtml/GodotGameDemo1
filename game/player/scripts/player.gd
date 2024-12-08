@@ -48,26 +48,18 @@ func _process(_delta: float) -> void:
 		skill.try_execute(self, Skill.SkillType.Bullet, running_data)
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		
 	direction = Input.get_axis("move_left", "move_right")
+	
+	# 翻转精灵
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
 	
 	jump()
 	double_jump()
 	state_judgement()
-	
-	# 翻转精灵
-	animated_sprite.flip_h = direction < 0
-	
-	var speed = attr.speed.value()
-	if not is_lock_operation:
-		if direction:
-			velocity.x = direction * speed
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
-		
+	update_velocity(delta)
 	move_range()
 
 	move_and_slide()
@@ -103,3 +95,16 @@ func state_judgement():
 		animated_sprite.play("jump")
 	else:
 		animated_sprite.play("fall")
+
+# 更新调整速度velocity
+func update_velocity(delta: float):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	var speed = attr.speed.value()
+	if not is_lock_operation:
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
