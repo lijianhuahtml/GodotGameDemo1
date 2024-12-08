@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -300.0
 @onready var map: TileMapLayer = $"../Map"
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var shooting_point: Marker2D = $ShootingPoint
+@onready var ui_root: UiRoot
 
 
 ## 技能
@@ -16,6 +17,8 @@ const JUMP_VELOCITY = -300.0
 var is_lock_operation := false
 ## 属性
 @export var attr: Attributes
+## 背包
+@export var inventory: Inventory
 
 var is_jump := false
 var used
@@ -26,6 +29,7 @@ var direction
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
 func _ready() -> void:
+	ui_root = get_tree().current_scene.get_node("UiRoot")
 	# 获取地图的使用信息
 	used = map.get_used_rect()
 	# 获取地图的图块大小
@@ -46,6 +50,10 @@ func _process(_delta: float) -> void:
 		var direction = get_global_mouse_position() - global_position
 		running_data.rotation = direction.angle()
 		skill.try_execute(self, Skill.SkillType.Bullet, running_data)
+	if Input.is_action_just_released("inventory"):
+		if !ui_root.player_inventory_ui.visible:
+			ui_root.player_inventory_ui.refresh(inventory)
+		ui_root.player_inventory_ui.visible = !ui_root.player_inventory_ui.visible
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("move_left", "move_right")
