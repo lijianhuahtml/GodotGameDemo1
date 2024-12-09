@@ -7,11 +7,12 @@
 script = ExtResource("1_dbamw")
 
 [node name="LifeBar" parent="." instance=ExtResource("2_2e56m")]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -817.0
-offset_top = -3.0
-offset_right = -783.0
-offset_bottom = 0.0
+offset_left = -16.0
+offset_top = -27.0
+offset_right = 18.0
+offset_bottom = -24.0
 grow_horizontal = 2

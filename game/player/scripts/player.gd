@@ -12,11 +12,11 @@ const JUMP_VELOCITY = -300.0
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 
-## 技能
+# 技能
 @onready var skill: Skill = $SkillNode
-## 是否锁定操作
+# 是否锁定操作
 var is_lock_operation := false
-## 属性
+# 属性
 var attr: Attributes
 ## 背包
 @export var inventory: Inventory
@@ -29,6 +29,7 @@ var map_size
 var player_width
 var direction
 var is_alive = true
+var play_injured = false
 
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
@@ -63,7 +64,6 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	direction = Input.get_axis("move_left", "move_right")
-	
 	# 翻转精灵
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -99,12 +99,12 @@ func move_range():
 	
 # 角色动画状态的判断
 func state_judgement():
-	if is_injured:
-		animated_sprite.play("hit")
-		await animated_sprite.animation_finished
-		is_injured = false
+	#if play_injured:
+		#animated_sprite.play("hit")
+		#await animated_sprite.animation_finished
+		#play_injured = false
 	# 判断是否在地面上
-	elif  is_on_floor():
+	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
 		else:

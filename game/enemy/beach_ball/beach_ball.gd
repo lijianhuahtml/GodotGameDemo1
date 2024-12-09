@@ -25,8 +25,6 @@ func _physics_process(delta: float) -> void:
 	# 计算Boss和玩家的相对位置
 	direction = global_position.direction_to(player.global_position)
 	
-	#print(direction)
-	
 	if not chase:
 		velocity.x = 0
 		animated_sprite.play("idle")

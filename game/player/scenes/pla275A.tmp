@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://game/skill/dash/skill_dash_data.gd" id="4_t5ib6"]
 [ext_resource type="Resource" uid="uid://1ul21ewyo50x" path="res://game/item/inventory/player_inventory.tres" id="5_3dix0"]
 [ext_resource type="Script" path="res://game/skill/base_skill.gd" id="8_ht30x"]
-[ext_resource type="PackedScene" uid="uid://rsr7x7dwn0eu" path="res://game/attributes/attributes_node.tscn" id="9_8iyns"]
+[ext_resource type="PackedScene" path="res://game/attributes/attributes_node.tscn" id="9_8iyns"]
 [ext_resource type="Resource" uid="uid://fss6f15tvx28" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
 [ext_resource type="PackedScene" uid="uid://c73oe7tftxgum" path="res://game/common/life/life_node.tscn" id="12_32etk"]
 

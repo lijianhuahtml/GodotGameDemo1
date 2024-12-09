@@ -18,8 +18,6 @@ func _ready():
 		boids.append(boid)
 
 func _process(delta):
-	if !player:
-		return
 	# 更新每个 Boid 的状态
 	for i in range(boids.size() - 1, -1, -1):
 		if boids[i] != null:

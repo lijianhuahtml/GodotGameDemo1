@@ -169,3 +169,4 @@ life_bar_offset = Vector2(0, -11)
 life_bar_size = Vector2(14, 3)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="on_death" from="LifeNode" to="." method="_on_life_node_on_death"]
