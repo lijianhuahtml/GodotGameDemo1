@@ -1,109 +1,110 @@
-[gd_scene load_steps=26 format=3 uid="uid://nenb1450mq2x"]
+[gd_scene load_steps=27 format=3 uid="uid://nenb1450mq2x"]
 
 [ext_resource type="Script" path="res://game/enemy/boids/bird.gd" id="1_uwvdq"]
 [ext_resource type="Script" path="res://game/attributes/attributes_float.gd" id="2_2whc6"]
 [ext_resource type="Texture2D" uid="uid://dkr7stu7r0n8l" path="res://assets/sprites/enemies/bee/Bee.png" id="2_xpp4t"]
 [ext_resource type="Script" path="res://game/attributes/attributes_cons.gd" id="3_oieiq"]
 [ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_asl1i"]
-[ext_resource type="PackedScene" uid="uid://dxxvk15uh4p87" path="res://game/enemy/scenes/lifebar.tscn" id="6_ei71x"]
+[ext_resource type="PackedScene" uid="uid://rsr7x7dwn0eu" path="res://game/attributes/attributes_node.tscn" id="7_pak86"]
+[ext_resource type="PackedScene" uid="uid://c73oe7tftxgum" path="res://game/common/life/life_node.tscn" id="8_tlv35"]
 
-[sub_resource type="Resource" id="Resource_w6ou0"]
+[sub_resource type="Resource" id="Resource_g1tif"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_3u0w4"]
+[sub_resource type="Resource" id="Resource_csb2l"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_peaq2"]
+[sub_resource type="Resource" id="Resource_rtr0i"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_1ikn6"]
+[sub_resource type="Resource" id="Resource_bgo1d"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_odbnn"]
+[sub_resource type="Resource" id="Resource_dea6p"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_2ohdj"]
+[sub_resource type="Resource" id="Resource_o5d0g"]
 resource_local_to_scene = true
 script = ExtResource("3_oieiq")
 max = 50.0
 cur = 50.0
 
-[sub_resource type="Resource" id="Resource_e44k5"]
+[sub_resource type="Resource" id="Resource_347mq"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_kddba"]
+[sub_resource type="Resource" id="Resource_fbhq8"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_fiv85"]
+[sub_resource type="Resource" id="Resource_vy1k0"]
 resource_local_to_scene = true
 script = ExtResource("3_oieiq")
 max = 0.0
 cur = 0.0
 
-[sub_resource type="Resource" id="Resource_7xc1q"]
+[sub_resource type="Resource" id="Resource_uwuec"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 10.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_xr44m"]
+[sub_resource type="Resource" id="Resource_200q1"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_upa0u"]
+[sub_resource type="Resource" id="Resource_tae38"]
 resource_local_to_scene = true
 script = ExtResource("2_2whc6")
 base = 200.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_3fbf7"]
+[sub_resource type="Resource" id="Resource_2ijy8"]
 resource_local_to_scene = true
 script = ExtResource("4_asl1i")
-hp = SubResource("Resource_2ohdj")
-mp = SubResource("Resource_fiv85")
-p_atk = SubResource("Resource_7xc1q")
-m_atk = SubResource("Resource_e44k5")
-p_def = SubResource("Resource_xr44m")
-m_def = SubResource("Resource_kddba")
-speed = SubResource("Resource_upa0u")
-crit = SubResource("Resource_w6ou0")
-crit_rate = SubResource("Resource_3u0w4")
-eva = SubResource("Resource_odbnn")
-dmg_inc = SubResource("Resource_peaq2")
-dmg_red = SubResource("Resource_1ikn6")
+hp = SubResource("Resource_o5d0g")
+mp = SubResource("Resource_vy1k0")
+p_atk = SubResource("Resource_uwuec")
+m_atk = SubResource("Resource_347mq")
+p_def = SubResource("Resource_200q1")
+m_def = SubResource("Resource_fbhq8")
+speed = SubResource("Resource_tae38")
+crit = SubResource("Resource_g1tif")
+crit_rate = SubResource("Resource_csb2l")
+eva = SubResource("Resource_dea6p")
+dmg_inc = SubResource("Resource_rtr0i")
+dmg_red = SubResource("Resource_bgo1d")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67etv"]
 
@@ -147,12 +148,14 @@ animations = [{
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_uwvdq")
-attr = SubResource("Resource_3fbf7")
 max_force = 15
 perception_radius = 500
 alignment_weight = 0.6
 cohesion_weight = 1.75
 separation_weight = 1.0
+
+[node name="AttributesNode" parent="." instance=ExtResource("7_pak86")]
+attr = SubResource("Resource_2ijy8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_67etv")
@@ -161,11 +164,8 @@ shape = SubResource("CircleShape2D_67etv")
 sprite_frames = SubResource("SpriteFrames_iwew7")
 autoplay = "default"
 
-[node name="ProgressBar" parent="." instance=ExtResource("6_ei71x")]
-visible = false
-offset_left = -7.0
-offset_top = -11.0
-offset_right = 7.0
-offset_bottom = -8.0
+[node name="LifeNode" parent="." instance=ExtResource("8_tlv35")]
+life_bar_offset = Vector2(0, -11)
+life_bar_size = Vector2(14, 3)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

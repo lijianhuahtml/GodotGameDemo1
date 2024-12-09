@@ -1,21 +1,18 @@
-[gd_scene load_steps=49 format=4 uid="uid://c1ih86ecoxm3r"]
+[gd_scene load_steps=20 format=4 uid="uid://c1ih86ecoxm3r"]
 
 [ext_resource type="Script" path="res://game/level/scripts/game_manager.gd" id="1_3qc25"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_tfq7v"]
 [ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/map/world_tileset.png" id="3_trh2w"]
 [ext_resource type="PackedScene" uid="uid://bxrg5oekq7eff" path="res://game/map/scenes/map1.tscn" id="4_3d45a"]
 [ext_resource type="PackedScene" uid="uid://b855cv72kbxk7" path="res://game/player/scenes/player.tscn" id="5_nwho0"]
-[ext_resource type="Script" path="res://game/attributes/attributes_float.gd" id="6_dy0kl"]
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://game/enemy/scenes/slime.tscn" id="6_i4cy2"]
 [ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://game/enemy/scenes/boss.tscn" id="7_1khp1"]
-[ext_resource type="Script" path="res://game/attributes/attributes_cons.gd" id="7_wgkkw"]
-[ext_resource type="Script" path="res://game/attributes/attributes.gd" id="8_irgo5"]
 [ext_resource type="PackedScene" uid="uid://ci2yorfnv5eyo" path="res://game/enemy/boids/boids.tscn" id="8_uur5j"]
 [ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/map_set/scenes/killzone.tscn" id="8_x3bow"]
 [ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/map_set/scenes/plastform.tscn" id="10_1k68q"]
 [ext_resource type="PackedScene" uid="uid://dc1c1iqfmjgmf" path="res://game/item/scenes/item.tscn" id="11_50ucq"]
 [ext_resource type="Resource" uid="uid://cxsbsuvj3cn7m" path="res://game/item/items/coin/coin.tres" id="12_qutey"]
-[ext_resource type="PackedScene" uid="uid://fhkjxb13vxou" path="res://game/enemy/scenes/beach_ball.tscn" id="16_dflwj"]
+[ext_resource type="PackedScene" path="res://game/enemy/scenes/beach_ball.tscn" id="16_dflwj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cojuk"]
 texture = ExtResource("3_trh2w")
@@ -152,189 +149,6 @@ texture = ExtResource("3_trh2w")
 [sub_resource type="TileSet" id="TileSet_eafyg"]
 sources/0 = SubResource("TileSetAtlasSource_cojuk")
 
-[sub_resource type="Resource" id="Resource_j2rg3"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_18118"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_e1ig3"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_c8r75"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_0k4f0"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_cff35"]
-resource_local_to_scene = true
-script = ExtResource("7_wgkkw")
-max = 100.0
-cur = 100.0
-
-[sub_resource type="Resource" id="Resource_bhd5r"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_gt81t"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_773w4"]
-resource_local_to_scene = true
-script = ExtResource("7_wgkkw")
-max = 100.0
-cur = 100.0
-
-[sub_resource type="Resource" id="Resource_ik6y0"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 30.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_hei4u"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_fiuw7"]
-resource_local_to_scene = true
-script = ExtResource("6_dy0kl")
-base = 130.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_gn1hv"]
-resource_local_to_scene = true
-script = ExtResource("8_irgo5")
-hp = SubResource("Resource_cff35")
-mp = SubResource("Resource_773w4")
-p_atk = SubResource("Resource_ik6y0")
-m_atk = SubResource("Resource_bhd5r")
-p_def = SubResource("Resource_hei4u")
-m_def = SubResource("Resource_gt81t")
-speed = SubResource("Resource_fiuw7")
-crit = SubResource("Resource_j2rg3")
-crit_rate = SubResource("Resource_18118")
-eva = SubResource("Resource_0k4f0")
-dmg_inc = SubResource("Resource_e1ig3")
-dmg_red = SubResource("Resource_c8r75")
-
-[sub_resource type="Resource" id="Resource_nnun6"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_xvpkp"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_bbgcl"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_xwqjg"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_d7l7l"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_1enwf"]
-script = ExtResource("7_wgkkw")
-max = 100.0
-cur = 100.0
-
-[sub_resource type="Resource" id="Resource_scs38"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_wi5dw"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_c8yvi"]
-script = ExtResource("7_wgkkw")
-max = 0.0
-cur = 0.0
-
-[sub_resource type="Resource" id="Resource_b6p2l"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_ebxhp"]
-script = ExtResource("6_dy0kl")
-base = 0.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_0l08v"]
-script = ExtResource("6_dy0kl")
-base = 40.0
-add = 0.0
-mul = 1.0
-
-[sub_resource type="Resource" id="Resource_yq1v2"]
-script = ExtResource("8_irgo5")
-hp = SubResource("Resource_1enwf")
-mp = SubResource("Resource_c8yvi")
-p_atk = SubResource("Resource_b6p2l")
-m_atk = SubResource("Resource_scs38")
-p_def = SubResource("Resource_ebxhp")
-m_def = SubResource("Resource_wi5dw")
-speed = SubResource("Resource_0l08v")
-crit = SubResource("Resource_nnun6")
-crit_rate = SubResource("Resource_xvpkp")
-eva = SubResource("Resource_d7l7l")
-dmg_inc = SubResource("Resource_bbgcl")
-dmg_red = SubResource("Resource_xwqjg")
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3qhi6"]
 
 [sub_resource type="Animation" id="Animation_a1kar"]
@@ -402,7 +216,6 @@ position = Vector2(1, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_nwho0")]
 position = Vector2(728, -43)
-attr = SubResource("Resource_gn1hv")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -415,12 +228,11 @@ position_smoothing_enabled = true
 position = Vector2(392, -64)
 
 [node name="Boss" parent="Enemy" instance=ExtResource("7_1khp1")]
-visible = false
 z_index = 1
 position = Vector2(1200, 64)
-attr = SubResource("Resource_yq1v2")
 
 [node name="Boids" parent="Enemy" instance=ExtResource("8_uur5j")]
+boid_count = 0
 
 [node name="BeachBall" parent="Enemy" instance=ExtResource("16_dflwj")]
 position = Vector2(888, 64)

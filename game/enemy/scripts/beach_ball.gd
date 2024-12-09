@@ -16,6 +16,8 @@ var is_crash = false
 func _physics_process(delta: float) -> void:
 	if not alive:
 		return
+	if !player:
+		return
 		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -23,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	# 计算Boss和玩家的相对位置
 	direction = global_position.direction_to(player.global_position)
 	
-	print(direction)
+	#print(direction)
 	
 	if not chase:
 		velocity.x = 0

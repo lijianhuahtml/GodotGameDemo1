@@ -8,16 +8,18 @@ var boids = []
 
 signal boid_death(index: int)
 
-#func _ready():
-	#boid_death.connect(on_boid_death)
-	## 实例化 Boids
-	#for i in range(boid_count):
-		#var boid = BoidScene.instantiate()
-		#boid.global_position = player.global_position - Vector2(500, 500) + Vector2(randf() * 1000, randf() * 1000)
-		#add_child(boid)
-		#boids.append(boid)
+func _ready():
+	boid_death.connect(on_boid_death)
+	# 实例化 Boids
+	for i in range(boid_count):
+		var boid = BoidScene.instantiate()
+		boid.global_position = player.global_position - Vector2(500, 500) + Vector2(randf() * 1000, randf() * 1000)
+		add_child(boid)
+		boids.append(boid)
 
 func _process(delta):
+	if !player:
+		return
 	# 更新每个 Boid 的状态
 	for i in range(boids.size() - 1, -1, -1):
 		if boids[i] != null:

@@ -37,8 +37,13 @@ class_name Attributes extends Resource
 ## 减伤 浮动值：具有基础值、加值、乘值。计算公式：最终值 = 基础值 * 乘值 + 加值
 @export var dmg_red := AttributesFloat.new()
 
+# TODO 可以换成Node2D
+signal on_take_damage(other: Attributes)
+
+signal on_cause_damage(other: Attributes)
+
 # 承受伤害
-func take_damage(attrs: Attributes):
+func take_damage(other: Attributes):
 	# 计算闪避
 	var is_evasion = randf() * 100 < eva.value()
 	if is_evasion:
@@ -46,14 +51,17 @@ func take_damage(attrs: Attributes):
 	
 	var damage = 0
 	# 计算所有攻击造成的基础伤害：对方物理攻击 - 己方物理防御 + 对方法术攻击 - 己方法术防御
-	damage += attrs.p_atk.value() - p_def.value()
-	damage += attrs.m_atk.value() - m_def.value()
+	damage += other.p_atk.value() - p_def.value()
+	damage += other.m_atk.value() - m_def.value()
 	# 计算暴击
-	var is_critical = randf() * 100 < attrs.crit.value()
-	var critical = attrs.crit_rate.value() / 100 if is_critical else 1
+	var is_critical = randf() * 100 < other.crit.value()
+	var critical = other.crit_rate.value() / 100 if is_critical else 1
 	# 计算最终伤害（未闪避）：基础伤害 * 对方暴击伤害 * 对方增伤 / 己方减伤
-	damage = damage * critical * (attrs.dmg_inc.value() + 100) / 100 / ((dmg_red.value() + 100) / 100)
+	damage = damage * critical * (other.dmg_inc.value() + 100) / 100 / ((dmg_red.value() + 100) / 100)
 	hp.cur -= damage
+	
+	on_take_damage.emit(other)
+	other.on_cause_damage.emit(self)
 
 # 合并另一个属性到自身
 func merge(attrs: Attributes):

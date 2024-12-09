@@ -1,109 +1,110 @@
-[gd_scene load_steps=78 format=3 uid="uid://coj8iik7rfwyg"]
+[gd_scene load_steps=79 format=3 uid="uid://coj8iik7rfwyg"]
 
 [ext_resource type="Texture2D" uid="uid://h22ph7eacvav" path="res://assets/sprites/enemies/Tauren.png" id="1_p1a1y"]
 [ext_resource type="Script" path="res://game/enemy/scripts/boss.gd" id="1_u4ks5"]
 [ext_resource type="Script" path="res://game/attributes/attributes_float.gd" id="2_3f8yn"]
 [ext_resource type="Script" path="res://game/attributes/attributes_cons.gd" id="3_887qj"]
 [ext_resource type="Script" path="res://game/attributes/attributes.gd" id="4_racgm"]
-[ext_resource type="PackedScene" uid="uid://dxxvk15uh4p87" path="res://game/enemy/scenes/lifebar.tscn" id="6_j50jo"]
+[ext_resource type="PackedScene" uid="uid://rsr7x7dwn0eu" path="res://game/attributes/attributes_node.tscn" id="5_8k2e0"]
+[ext_resource type="PackedScene" uid="uid://c73oe7tftxgum" path="res://game/common/life/life_node.tscn" id="7_76r8r"]
 
-[sub_resource type="Resource" id="Resource_t2r0f"]
+[sub_resource type="Resource" id="Resource_owmpo"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_s58hy"]
+[sub_resource type="Resource" id="Resource_a1p55"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_614o6"]
+[sub_resource type="Resource" id="Resource_x3vf8"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_0iol7"]
+[sub_resource type="Resource" id="Resource_7ljg2"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_und8j"]
+[sub_resource type="Resource" id="Resource_ou45s"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_ssdc0"]
+[sub_resource type="Resource" id="Resource_ju32j"]
 resource_local_to_scene = true
 script = ExtResource("3_887qj")
 max = 5000.0
 cur = 5000.0
 
-[sub_resource type="Resource" id="Resource_ku7ma"]
+[sub_resource type="Resource" id="Resource_b7pfw"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_7ysct"]
+[sub_resource type="Resource" id="Resource_wlw2j"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_b5pf8"]
+[sub_resource type="Resource" id="Resource_cai1f"]
 resource_local_to_scene = true
 script = ExtResource("3_887qj")
 max = 0.0
 cur = 0.0
 
-[sub_resource type="Resource" id="Resource_jbxh6"]
+[sub_resource type="Resource" id="Resource_jm65q"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_sm7yp"]
+[sub_resource type="Resource" id="Resource_c7dic"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_e1vy6"]
+[sub_resource type="Resource" id="Resource_s302l"]
 resource_local_to_scene = true
 script = ExtResource("2_3f8yn")
 base = 40.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_nhgnk"]
+[sub_resource type="Resource" id="Resource_h8r03"]
 resource_local_to_scene = true
 script = ExtResource("4_racgm")
-hp = SubResource("Resource_ssdc0")
-mp = SubResource("Resource_b5pf8")
-p_atk = SubResource("Resource_jbxh6")
-m_atk = SubResource("Resource_ku7ma")
-p_def = SubResource("Resource_sm7yp")
-m_def = SubResource("Resource_7ysct")
-speed = SubResource("Resource_e1vy6")
-crit = SubResource("Resource_t2r0f")
-crit_rate = SubResource("Resource_s58hy")
-eva = SubResource("Resource_und8j")
-dmg_inc = SubResource("Resource_614o6")
-dmg_red = SubResource("Resource_0iol7")
+hp = SubResource("Resource_ju32j")
+mp = SubResource("Resource_cai1f")
+p_atk = SubResource("Resource_jm65q")
+m_atk = SubResource("Resource_b7pfw")
+p_def = SubResource("Resource_c7dic")
+m_def = SubResource("Resource_wlw2j")
+speed = SubResource("Resource_s302l")
+crit = SubResource("Resource_owmpo")
+crit_rate = SubResource("Resource_a1p55")
+eva = SubResource("Resource_ou45s")
+dmg_inc = SubResource("Resource_x3vf8")
+dmg_red = SubResource("Resource_7ljg2")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3jjy"]
 atlas = ExtResource("1_p1a1y")
@@ -582,7 +583,9 @@ size = Vector2(36, 44)
 collision_layer = 8
 platform_wall_layers = 4095
 script = ExtResource("1_u4ks5")
-attr = SubResource("Resource_nhgnk")
+
+[node name="AttributesNode" parent="." instance=ExtResource("5_8k2e0")]
+attr = SubResource("Resource_h8r03")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -16)
@@ -594,4 +597,6 @@ autoplay = "idle"
 position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_20iq8")
 
-[node name="ProgressBar" parent="." instance=ExtResource("6_j50jo")]
+[node name="LifeNode" parent="." instance=ExtResource("7_76r8r")]
+
+[connection signal="on_death" from="LifeNode" to="." method="_on_life_node_on_death"]

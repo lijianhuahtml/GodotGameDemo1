@@ -13,11 +13,11 @@ const JUMP_VELOCITY = -300.0
 
 
 ## 技能
-@onready var skill: Skill = $Skill
+@onready var skill: Skill = $SkillNode
 ## 是否锁定操作
 var is_lock_operation := false
 ## 属性
-@export var attr: Attributes
+var attr: Attributes
 ## 背包
 @export var inventory: Inventory
 
@@ -28,7 +28,7 @@ var used
 var map_size
 var player_width
 var direction
-var alive = true
+var is_alive = true
 
 # velocity [默认： Vector2(0, 0)]
 # 当前速度向量，单位为像素每秒
@@ -40,7 +40,6 @@ func _ready() -> void:
 	map_size = map.tile_set.tile_size
 	# 玩家CollisionShape2D宽度
 	player_width = collision_shape.shape.get_rect().size.x
-	attr.hp.changed.connect(hp_changed)
 
 func _process(_delta: float) -> void:
 	if is_lock_operation:
@@ -60,9 +59,9 @@ func _process(_delta: float) -> void:
 		ui_root.player_inventory_ui.visible = !ui_root.player_inventory_ui.visible
 
 func _physics_process(delta: float) -> void:
-	if not alive:
+	if not is_alive:
 		return
-		
+	
 	direction = Input.get_axis("move_left", "move_right")
 	
 	# 翻转精灵
@@ -128,18 +127,7 @@ func update_velocity(delta: float):
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 
-func hp_changed():
-	progress_bar.max_value = attr.hp.max
-	progress_bar.value = attr.hp.cur
-	is_injured = true
-	if attr.hp.cur <= 0:
-		#death()
-		pass
-
-func death():
-	if not alive:
-		return
-	alive = false
+func _on_life_node_on_death() -> void:
 	animated_sprite.play("death")
 	await animated_sprite.animation_finished
 	queue_free()

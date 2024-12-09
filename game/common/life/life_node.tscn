@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c73oe7tftxgum"]
+
+[ext_resource type="Script" path="res://game/common/life/life_node.gd" id="1_dbamw"]
+[ext_resource type="PackedScene" uid="uid://b5ty1pyy7y8ge" path="res://game/common/life/lifebar.tscn" id="2_2e56m"]
+
+[node name="LifeNode" type="Node2D"]
+script = ExtResource("1_dbamw")
+
+[node name="LifeBar" parent="." instance=ExtResource("2_2e56m")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -817.0
+offset_top = -3.0
+offset_right = -783.0
+offset_bottom = 0.0
+grow_horizontal = 2

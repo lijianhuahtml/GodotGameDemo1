@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b855cv72kbxk7"]
+[gd_scene load_steps=58 format=3 uid="uid://b855cv72kbxk7"]
 
 [ext_resource type="Script" path="res://game/player/scripts/player.gd" id="1_nmfm8"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/player/knight.png" id="1_p15u6"]
@@ -9,106 +9,116 @@
 [ext_resource type="Script" path="res://game/skill/dash/skill_dash_data.gd" id="4_t5ib6"]
 [ext_resource type="Resource" uid="uid://1ul21ewyo50x" path="res://game/item/inventory/player_inventory.tres" id="5_3dix0"]
 [ext_resource type="Script" path="res://game/skill/base_skill.gd" id="8_ht30x"]
+[ext_resource type="PackedScene" uid="uid://rsr7x7dwn0eu" path="res://game/attributes/attributes_node.tscn" id="9_8iyns"]
 [ext_resource type="Resource" uid="uid://fss6f15tvx28" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
-[ext_resource type="PackedScene" uid="uid://dxxvk15uh4p87" path="res://game/enemy/scenes/lifebar.tscn" id="11_d7mkt"]
+[ext_resource type="PackedScene" uid="uid://c73oe7tftxgum" path="res://game/common/life/life_node.tscn" id="12_32etk"]
 
-[sub_resource type="Resource" id="Resource_7chbb"]
+[sub_resource type="Resource" id="Resource_xkg4m"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_xfdxm"]
+[sub_resource type="Resource" id="Resource_pcumj"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_l41pj"]
+[sub_resource type="Resource" id="Resource_qype7"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_auphu"]
+[sub_resource type="Resource" id="Resource_8o5kw"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_t66d4"]
+[sub_resource type="Resource" id="Resource_2nffo"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_1afcu"]
+[sub_resource type="Resource" id="Resource_qr4tb"]
 resource_local_to_scene = true
 script = ExtResource("3_6u5ak")
 max = 100.0
 cur = 100.0
 
-[sub_resource type="Resource" id="Resource_fvs2d"]
+[sub_resource type="Resource" id="Resource_brmex"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_vufrr"]
+[sub_resource type="Resource" id="Resource_po0td"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_go0tf"]
+[sub_resource type="Resource" id="Resource_hvx72"]
 resource_local_to_scene = true
 script = ExtResource("3_6u5ak")
 max = 100.0
 cur = 100.0
 
-[sub_resource type="Resource" id="Resource_qgrfh"]
+[sub_resource type="Resource" id="Resource_lppcn"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 30.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_klylh"]
+[sub_resource type="Resource" id="Resource_1kigb"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 0.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_nqmx6"]
+[sub_resource type="Resource" id="Resource_wy3rg"]
 resource_local_to_scene = true
 script = ExtResource("2_k6e1t")
 base = 130.0
 add = 0.0
 mul = 1.0
 
-[sub_resource type="Resource" id="Resource_a4jrp"]
+[sub_resource type="Resource" id="Resource_1aj7u"]
 resource_local_to_scene = true
 script = ExtResource("4_iq3yf")
-hp = SubResource("Resource_1afcu")
-mp = SubResource("Resource_go0tf")
-p_atk = SubResource("Resource_qgrfh")
-m_atk = SubResource("Resource_fvs2d")
-p_def = SubResource("Resource_klylh")
-m_def = SubResource("Resource_vufrr")
-speed = SubResource("Resource_nqmx6")
-crit = SubResource("Resource_7chbb")
-crit_rate = SubResource("Resource_xfdxm")
-eva = SubResource("Resource_t66d4")
-dmg_inc = SubResource("Resource_l41pj")
-dmg_red = SubResource("Resource_auphu")
+hp = SubResource("Resource_qr4tb")
+mp = SubResource("Resource_hvx72")
+p_atk = SubResource("Resource_lppcn")
+m_atk = SubResource("Resource_brmex")
+p_def = SubResource("Resource_1kigb")
+m_def = SubResource("Resource_po0td")
+speed = SubResource("Resource_wy3rg")
+crit = SubResource("Resource_xkg4m")
+crit_rate = SubResource("Resource_pcumj")
+eva = SubResource("Resource_2nffo")
+dmg_inc = SubResource("Resource_qype7")
+dmg_red = SubResource("Resource_8o5kw")
+
+[sub_resource type="Resource" id="Resource_7g7l8"]
+script = ExtResource("4_t5ib6")
+speed = 1000.0
+dash_time = 0.1
+type = 0
+name = "冲刺"
+cooldown = 1.0
+cost = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wikrb"]
 atlas = ExtResource("1_p15u6")
@@ -349,21 +359,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_oa1ch"]
 radius = 5.0
 
-[sub_resource type="Resource" id="Resource_7g7l8"]
-script = ExtResource("4_t5ib6")
-speed = 1000.0
-dash_time = 0.1
-type = 0
-name = "冲刺"
-cooldown = 1.0
-cost = 10.0
-
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_nmfm8")
-attr = SubResource("Resource_a4jrp")
 inventory = ExtResource("5_3dix0")
+
+[node name="AttributesNode" parent="." instance=ExtResource("9_8iyns")]
+attr = SubResource("Resource_1aj7u")
+
+[node name="SkillNode" type="Node" parent="."]
+script = ExtResource("3_n60c3")
+skills = Array[ExtResource("8_ht30x")]([SubResource("Resource_7g7l8"), ExtResource("9_ssj44")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -377,17 +384,13 @@ frame_progress = 1.0
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_oa1ch")
 
-[node name="Skill" type="Node" parent="."]
-script = ExtResource("3_n60c3")
-skills = Array[ExtResource("8_ht30x")]([SubResource("Resource_7g7l8"), ExtResource("9_ssj44")])
-
 [node name="ShootingPoint" type="Marker2D" parent="."]
 position = Vector2(1.11759e-08, -6)
 rotation = 0.0174062
 scale = Vector2(0.331058, 0.331058)
 
-[node name="ProgressBar" parent="." instance=ExtResource("11_d7mkt")]
-offset_left = -9.0
-offset_top = -26.0
-offset_right = 9.0
-offset_bottom = -23.0
+[node name="LifeNode" parent="." instance=ExtResource("12_32etk")]
+life_bar_offset = Vector2(0, -30)
+life_bar_size = Vector2(24, 3)
+
+[connection signal="on_death" from="LifeNode" to="." method="_on_life_node_on_death"]

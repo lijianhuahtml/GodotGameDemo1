@@ -8,15 +8,15 @@ extends CharacterBody2D
 const OFFSET = 20  # Boss走到玩家前面一点的距离
 
 ## 属性
-@export var attr: Attributes
-var alive = true # 是否活着
+var attr: Attributes
+var is_alive = true # 是否活着
+var is_injured = false
 var is_attack = false # 是否在攻击
 
-func _ready() -> void:
-	attr.hp.changed.connect(hp_changed)
-
 func _physics_process(delta: float) -> void:
-	if not alive:
+	if not is_alive:
+		return
+	if !player:
 		return
 		
 	if not is_on_floor():
@@ -46,20 +46,6 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction.x * attr.speed.value()
 	
 	move_and_slide()
-
-func hp_changed():
-	progress_bar.max_value = attr.hp.max
-	progress_bar.value = attr.hp.cur
-	if attr.hp.cur <= 0:
-		death()
-
-func death():
-	if not alive:
-		return
-	alive = false
-	animated_sprite.play("death")
-	await animated_sprite.animation_finished
-	queue_free()
 	
 func attack():
 	is_attack = true
@@ -71,3 +57,9 @@ func attack():
 	
 	await animated_sprite.animation_finished
 	is_attack = false
+
+
+func _on_life_node_on_death() -> void:
+	animated_sprite.play("death")
+	await animated_sprite.animation_finished
+	queue_free()

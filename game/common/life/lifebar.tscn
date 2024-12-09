@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxxvk15uh4p87"]
+[gd_scene load_steps=3 format=3 uid="uid://b5ty1pyy7y8ge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vosgx"]
 bg_color = Color(0.415686, 0.415686, 0.415686, 1)
@@ -14,7 +14,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="ProgressBar" type="ProgressBar"]
+[node name="LifeBar" type="ProgressBar"]
 offset_left = -17.0
 offset_top = -50.0
 offset_right = 17.0

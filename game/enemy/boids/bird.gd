@@ -4,8 +4,7 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 
-
-@export var attr: Attributes
+var attr: Attributes
 var be_attacked = false
 var is_running = false
 var last_damage_time # 最后一次受到伤害的时间戳
@@ -46,17 +45,21 @@ var show_hp_time = 3000 # 血条显示时间（毫秒）
 		if separation_weight != new_value:
 			separation_weight = new_value
 
-var alive = true
+var is_alive = true
+var is_injured := false
 
 # 当前速度
 var velocity = Vector2.ZERO
 # 加速度
 var acceleration = Vector2.ZERO
 
-func _ready() -> void:
-	attr.hp.changed.connect(hp_changed)
+#func _ready() -> void:
+	#attr.hp.changed.connect(hp_changed)
 
 func _process(delta):
+	if !attr:
+		return
+	
 	# 更新位置
 	velocity += acceleration
 	velocity = velocity.normalized() * attr.speed.value()
@@ -155,7 +158,10 @@ func _delayed_hide_bar() -> void:
 	is_running = false
 
 func death():
-	if not alive:
+	if not is_alive:
 		return
-	alive = false
+	is_alive = false
+	queue_free()
+
+func _on_life_node_on_death() -> void:
 	queue_free()
