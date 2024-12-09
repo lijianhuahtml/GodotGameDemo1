@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b855cv72kbxk7"]
+[gd_scene load_steps=57 format=3 uid="uid://b855cv72kbxk7"]
 
 [ext_resource type="Script" path="res://game/player/scripts/player.gd" id="1_nmfm8"]
 [ext_resource type="Texture2D" uid="uid://b8cmjj8vq3r8d" path="res://assets/sprites/player/knight.png" id="1_p15u6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://1ul21ewyo50x" path="res://game/item/inventory/player_inventory.tres" id="5_3dix0"]
 [ext_resource type="Script" path="res://game/skill/base_skill.gd" id="8_ht30x"]
 [ext_resource type="Resource" uid="uid://fss6f15tvx28" path="res://game/skill/bullet/bullet_config.tres" id="9_ssj44"]
+[ext_resource type="PackedScene" uid="uid://dxxvk15uh4p87" path="res://game/enemy/scenes/lifebar.tscn" id="11_d7mkt"]
 
 [sub_resource type="Resource" id="Resource_7chbb"]
 resource_local_to_scene = true
@@ -109,9 +110,37 @@ eva = SubResource("Resource_t66d4")
 dmg_inc = SubResource("Resource_l41pj")
 dmg_red = SubResource("Resource_auphu")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wikrb"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6amn1"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_burxd"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y5dp"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q3ud"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(96, 224, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j27c"]
 atlas = ExtResource("1_p15u6")
 region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xctof"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vksji"]
+atlas = ExtResource("1_p15u6")
+region = Rect2(96, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkbdm"]
 atlas = ExtResource("1_p15u6")
@@ -201,10 +230,41 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_wikrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6amn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_burxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y5dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q3ud")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1j27c")
 }],
 "loop": true,
 "name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xctof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vksji")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 10.0
 }, {
 "frames": [{
@@ -308,8 +368,10 @@ inventory = ExtResource("5_3dix0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_3laqw")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
@@ -323,3 +385,9 @@ skills = Array[ExtResource("8_ht30x")]([SubResource("Resource_7g7l8"), ExtResour
 position = Vector2(1.11759e-08, -6)
 rotation = 0.0174062
 scale = Vector2(0.331058, 0.331058)
+
+[node name="ProgressBar" parent="." instance=ExtResource("11_d7mkt")]
+offset_left = -9.0
+offset_top = -26.0
+offset_right = 9.0
+offset_bottom = -23.0

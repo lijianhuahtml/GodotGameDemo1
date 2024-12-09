@@ -415,6 +415,7 @@ position_smoothing_enabled = true
 position = Vector2(392, -64)
 
 [node name="Boss" parent="Enemy" instance=ExtResource("7_1khp1")]
+visible = false
 z_index = 1
 position = Vector2(1200, 64)
 attr = SubResource("Resource_yq1v2")
@@ -422,7 +423,7 @@ attr = SubResource("Resource_yq1v2")
 [node name="Boids" parent="Enemy" instance=ExtResource("8_uur5j")]
 
 [node name="BeachBall" parent="Enemy" instance=ExtResource("16_dflwj")]
-position = Vector2(888, 65)
+position = Vector2(888, 64)
 
 [node name="Killzone" parent="." instance=ExtResource("8_x3bow")]
 position = Vector2(56, 122)

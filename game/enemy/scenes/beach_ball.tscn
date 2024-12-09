@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://fhkjxb13vxou"]
+[gd_scene load_steps=106 format=3 uid="uid://fhkjxb13vxou"]
 
 [ext_resource type="Texture2D" uid="uid://bobc62njhrsmy" path="res://assets/sprites/enemies/beach_ball.png" id="1_ps4i5"]
 [ext_resource type="Script" path="res://game/enemy/scripts/beach_ball.gd" id="1_r7j6l"]
@@ -60,7 +60,7 @@ cur = 0.0
 
 [sub_resource type="Resource" id="Resource_38yt6"]
 script = ExtResource("2_6fe5e")
-base = 0.0
+base = 10.0
 add = 0.0
 mul = 1.0
 
@@ -688,8 +688,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v3krf"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w44xj"]
+size = Vector2(14, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3pxh"]
 size = Vector2(206, 14)
@@ -697,8 +697,12 @@ size = Vector2(206, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08asm"]
 size = Vector2(6, 1)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pnbuh"]
+radius = 0.999901
+height = 15.9703
+
 [node name="BeachBall" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_r7j6l")
 attr = SubResource("Resource_sgw5f")
@@ -706,27 +710,40 @@ attr = SubResource("Resource_sgw5f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_61b83")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_v3krf")
+shape = SubResource("RectangleShape2D_w44xj")
 
 [node name="ChaseArea" type="Area2D" parent="."]
-collision_mask = 3
+visible = false
+collision_layer = 32
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_q3pxh")
 
-[node name="AttackArea" type="Area2D" parent="."]
-collision_mask = 3
+[node name="Injured" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Injured"]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_08asm")
 
+[node name="Attack" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(0, -7)
+rotation = 1.58485
+shape = SubResource("CapsuleShape2D_pnbuh")
+
 [connection signal="body_entered" from="ChaseArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="ChaseArea" to="." method="_on_attack_area_body_exited"]
-[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_entered"]
+[connection signal="body_entered" from="Injured" to="." method="_on_attack_entered"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]

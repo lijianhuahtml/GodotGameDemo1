@@ -142,8 +142,8 @@ radius = 8.0
 [node name="Bullet" type="Area2D"]
 top_level = true
 z_index = 2
-collision_layer = 8
-collision_mask = 4
+collision_layer = 16
+collision_mask = 12
 script = ExtResource("1_x04bc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
