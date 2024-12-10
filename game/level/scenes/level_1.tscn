@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c1ih86ecoxm3r"]
+[gd_scene load_steps=21 format=4 uid="uid://c1ih86ecoxm3r"]
 
 [ext_resource type="Script" path="res://game/level/scripts/game_manager.gd" id="1_3qc25"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_tfq7v"]
@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bxrg5oekq7eff" path="res://game/map/scenes/map1.tscn" id="4_3d45a"]
 [ext_resource type="PackedScene" uid="uid://b855cv72kbxk7" path="res://game/player/scenes/player.tscn" id="5_nwho0"]
 [ext_resource type="PackedScene" uid="uid://bvl0ax03f50gp" path="res://game/enemy/slime/slime.tscn" id="6_i4cy2"]
-[ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://game/enemy/Tauren/Tauren.tscn" id="7_1khp1"]
+[ext_resource type="PackedScene" uid="uid://coj8iik7rfwyg" path="res://game/enemy/tauren/tauren.tscn" id="7_1khp1"]
 [ext_resource type="PackedScene" uid="uid://ci2yorfnv5eyo" path="res://game/enemy/boids/boids.tscn" id="8_uur5j"]
 [ext_resource type="PackedScene" uid="uid://c82lbqp2pwvb0" path="res://game/map_set/scenes/killzone.tscn" id="8_x3bow"]
 [ext_resource type="PackedScene" uid="uid://cpjdptujk0ogc" path="res://game/map_set/scenes/plastform.tscn" id="10_1k68q"]
 [ext_resource type="PackedScene" uid="uid://dc1c1iqfmjgmf" path="res://game/item/scenes/item.tscn" id="11_50ucq"]
 [ext_resource type="Resource" uid="uid://cxsbsuvj3cn7m" path="res://game/item/items/coin/coin.tres" id="12_qutey"]
+[ext_resource type="PackedScene" uid="uid://d1k0ovwp700fh" path="res://game/player/npc/npc_tzz.tscn" id="14_fqddl"]
 [ext_resource type="PackedScene" uid="uid://fhkjxb13vxou" path="res://game/enemy/beach_ball/beach_ball.tscn" id="16_dflwj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cojuk"]
@@ -215,7 +216,7 @@ metadata/_edit_lock_ = true
 position = Vector2(1, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_nwho0")]
-position = Vector2(728, -43)
+position = Vector2(16, -23)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
@@ -312,10 +313,10 @@ text = "W to jump "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Labels"]
-offset_left = -204.0
-offset_top = 64.0
-offset_right = -102.0
-offset_bottom = 77.0
+offset_left = -174.0
+offset_top = -80.0
+offset_right = -72.0
+offset_bottom = -67.0
 theme_override_fonts/font = ExtResource("2_tfq7v")
 theme_override_font_sizes/font_size = 8
 text = "fall will kill you"
@@ -328,3 +329,6 @@ offset_bottom = -129.0
 theme_override_fonts/font = ExtResource("2_tfq7v")
 theme_override_font_sizes/font_size = 8
 text = "You'll die if you meet slime"
+
+[node name="NPC_tzz" parent="." instance=ExtResource("14_fqddl")]
+position = Vector2(-139, 65)

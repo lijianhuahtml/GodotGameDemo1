@@ -1,0 +1,14 @@
+join tzz center [z_index="1"]
+这里是哪里？
+这个是什么？
+join mask center [z_index="1"]
+是一个面具.
+有点牛逼啊！
+我要戴一下看看.
+leave mask
+哎呀！怎么不见了.
+- 不管了！
+	不管不行
+	[signal arg="choice1"]
+- 我就不信做不到你！
+	[signal arg="choice2"]
