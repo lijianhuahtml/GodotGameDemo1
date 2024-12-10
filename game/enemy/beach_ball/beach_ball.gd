@@ -68,7 +68,7 @@ func _on_attack_entered(body: Node2D) -> void:
 func _on_attack_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		if attr and body.attr:
-			body.attr.take_damage(self.attr)
+			body.attr.take_damage(self)
 			if not is_crash:
 				is_crash = true
 				await get_tree().create_timer(1.0).timeout

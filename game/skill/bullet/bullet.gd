@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 	animated_sprite.play("impact")
 	self.collision_mask = 0
 	if executor.attr and body.attr:
-		body.attr.take_damage(executor.attr)
+		body.attr.take_damage(executor)
 	await animated_sprite.animation_finished
 	queue_free()
  

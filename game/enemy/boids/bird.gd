@@ -133,7 +133,7 @@ func separate(boids: Array) -> Vector2:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.attr:
-		body.attr.take_damage(attr)
+		body.attr.take_damage(self)
 
 func _on_life_node_on_death() -> void:
 	queue_free()

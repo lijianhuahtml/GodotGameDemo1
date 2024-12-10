@@ -34,3 +34,12 @@ func merge(attr: AttributesFloat):
 	base += attr.base
 	add += attr.add
 	mul += attr.mul
+
+## 分离属性
+func split(attr: AttributesFloat):
+	if attr == null:
+		return
+	
+	base -= attr.base
+	add -= attr.add
+	mul -= attr.mul
